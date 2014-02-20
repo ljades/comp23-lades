@@ -1,0 +1,33 @@
+import pygame, os, sys
+from pygame.locals import *
+from random import randint
+
+class Laser(pygame.sprite.Sprite):
+    def load_image(self, image_name):
+        ''' Following the proper image loading format '''
+        try:
+            image = pygame.image.load(image_name)
+        except pygame.error, message:
+            print "Cannot load image: " + image_name
+            raise SystemExit, message
+        return image.convert_alpha()
+
+    def __init__(self, screen, img_filename, init_x, init_y, init_x_speed, init_y_speed):
+        ''' Laser-specific constructor '''
+        pygame.sprite.Sprite.__init__(self)
+        self.screen = screen
+
+        self.image = self.load_image(img_filename)
+        self.rect = self.image.get_rect()
+
+        self.image_w, self.image_h = self.image.get_size()
+
+        self.x = init_x
+        self.y = init_y
+        self.dx = init_x_speed
+        self.dy = init_y_speed
+
+    def update(self):
+        
+
+        
