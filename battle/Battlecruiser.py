@@ -60,6 +60,8 @@ class Battlecruiser(pygame.sprite.Sprite):
 			self.lasers.append(Laser(self.screen, self.l_filename, self.x - (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
 			self.cooldown = 0.5
 			self.laser_sound.play()
+			if (len(self.lasers) > 6):
+				self.lasers.pop(0)
 	def reset_position(self):
 		self.x, self.y = self.init_xy
 		self.dx = 0
@@ -125,6 +127,9 @@ class Battlecruiser(pygame.sprite.Sprite):
 			for laser in self.lasers:
 				laser.update()
 				laser.draw()
+			self.rect.move(self.x, self.y)
+			self.rect.topleft = (self.x - self.image_w/2, self.y - self.image_h/2)
+			self.rect.bottomright = (self.x + self.image_w/2, self.y +self.image_h/2)
 
         def draw(self):
                 if (self.active == True):

@@ -39,6 +39,9 @@ class Laser(pygame.sprite.Sprite):
 
                         self.x = self.x + self.dx
                         self.y = self.y + self.dy
+			self.rect.move(self.x, self.y)
+			self.rect.topleft = (self.x - self.image_w/2, self.y - self.image_h/2)
+			self.rect.bottomright = (self.x + self.image_w/2, self.y +self.image_h/2)
 
         def draw(self):
                 if (self.active == True):

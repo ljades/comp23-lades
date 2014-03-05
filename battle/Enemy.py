@@ -55,7 +55,10 @@ class Enemy(pygame.sprite.Sprite):
 			if self.explode_countdown <= 0.0:
 				self.active = False
 			else:
-				self.explode_countdown -= 2/FPS
+				self.explode_countdown -= 2.0/FPS
+		self.rect.move(self.x, self.y)
+		self.rect.topleft = (self.x - self.image_w/2, self.y - self.image_h/2)
+		self.rect.bottomright = (self.x + self.image_w/2, self.y +self.image_h/2)
 
 
         def draw(self):

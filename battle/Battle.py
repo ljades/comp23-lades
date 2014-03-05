@@ -29,11 +29,16 @@ if __name__ == "__main__":
     BACKGROUND_MUSIC = 'assets/assets/main_theme.wav'
     EXPLOSION_SOUND = 'assets/assets/death_explode.wav'
     ENEMY_MAX_SPEED = 4
-
     pygame.init()
+
+    font = pygame.font.Font(None, 40)
+    giantfont = pygame.font.Font(None, 40)
+    SCORE_LOCATION = (10, 10)
+    GOVER_LOCATION = (30, 30)
 
     try:
         background_music = pygame.mixer.Sound(BACKGROUND_MUSIC)
+        explosion_sound = pygame.mixer.Sound(EXPLOSION_SOUND)
     except:
         print "Sound not working."
 
@@ -51,7 +56,7 @@ if __name__ == "__main__":
     enemies = []
 
     player = Battlecruiser(screen, BC_IMAGE, LASER_IMAGE, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, BC_MAX_SPEED, LASER_SPEED, BC_X_ACCEL, BC_Y_ACCEL, LASER_SOUND)
-
+    game_over = False
     score = 0
     counter = 0
     while True:
@@ -87,14 +92,17 @@ if __name__ == "__main__":
         ''' Generate a new enemy every so often '''
         if (len(enemies) <= 10 and counter % (FPS * 2) == 0):
             enemies.append(Enemy(screen, ENEMY_IMAGE, EXPLODE_IMAGE, randint(0, SCREEN_WIDTH), 1, randint(-1*ENEMY_MAX_SPEED, ENEMY_MAX_SPEED), ENEMY_MAX_SPEED, ))
-
-
-        #collision detection
         
         #update stuff
+        enemy_index = 0
         for enemy in enemies:
-            enemy.update(FPS)
-            enemy.draw()
+            if enemy.active == False:
+                enemies.pop(enemy_index)
+            else:
+                enemy.update(FPS)
+                enemy.draw()
+            enemy_index += 1
+            
 
         player.update(FPS)
         player.draw()
@@ -102,4 +110,49 @@ if __name__ == "__main__":
         counter += 1
         y_pos_on_scroll += 1
 
+        ''' collision detection '''
+        for enemy in enemies:
+            for laser in player.lasers:
+                if (pygame.sprite.collide_rect(laser, enemy) and enemy.exploding == False):
+                    score += 100
+                    enemy.explode()
+                    break
+        #check if player lost
+        for enemy in enemies:
+            if (pygame.sprite.collide_rect(player, enemy) == True):
+                game_over = True
+                break
+
+        score_text = font.render("Score: " + str(score), 1, (60, 255, 30))
+        screen.blit(score_text, SCORE_LOCATION)
+
         pygame.display.flip()
+
+        if (game_over == True):
+            explosion_sound.play()
+            game_over = False
+            score = 0
+            counter = 0
+            y_pos_on_scroll = -1*background_image.get_size()[1] + SCREEN_HEIGHT
+            enemies = []
+            gover_text = giantfont.render("GAME OVER! PRESS ENTER TO PLAY AGAIN", 1, (60, 255, 30))
+            
+            screen.blit(gover_text, GOVER_LOCATION)
+            pygame.display.flip()
+            while (1):
+                #print something
+
+                play_again = False
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    elif event.type == KEYDOWN:
+                        if event.key == K_ESCAPE:
+                            pygame.quit()
+                            sys.exit()
+                        if event.key == K_RETURN:
+                            play_again = True
+                if play_again:
+                    break
+                
