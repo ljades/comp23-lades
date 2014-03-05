@@ -13,6 +13,13 @@ if __name__ == "__main__":
         print "Warning, sound disabled"
 
     #Constants
+    if (len(sys.argv) == 2):
+        try:
+            ENEMY_GEN = int(sys.argv[1])
+        except:
+            ENEMY_GEN = 0.5
+    else:
+        ENEMY_GEN = 0.5
     FPS = 50
     SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
     BC_MAX_SPEED = 8
@@ -90,7 +97,7 @@ if __name__ == "__main__":
             screen.blit(background_image, background_image.get_rect().move(0, y_pos_on_scroll - background_image.get_size()[1] ))
 
         ''' Generate a new enemy every so often '''
-        if (len(enemies) <= 10 and counter % (FPS * 2) == 0):
+        if (len(enemies) <= 10 and counter % (FPS / ENEMY_GEN) == 0):
             enemies.append(Enemy(screen, ENEMY_IMAGE, EXPLODE_IMAGE, randint(0, SCREEN_WIDTH), 1, randint(-1*ENEMY_MAX_SPEED, ENEMY_MAX_SPEED), ENEMY_MAX_SPEED, ))
         
         #update stuff
