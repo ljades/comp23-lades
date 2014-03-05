@@ -13,7 +13,7 @@ class Battlecruiser(pygame.sprite.Sprite):
                         raise SystemExit, message
                 return image.convert_alpha()
 
-        def __init__(self, screen, bc_filename, laser_filename, init_x, init_y, max_speed, laser_speed, horiz_accel, vert_accel):
+        def __init__(self, screen, bc_filename, laser_filename, init_x, init_y, max_speed, laser_speed, horiz_accel, vert_accel, laser_sound):
                 ''' Battlecruiser-specific constructor '''
                 pygame.sprite.Sprite.__init__(self)
                 self.screen = screen
@@ -44,14 +44,15 @@ class Battlecruiser(pygame.sprite.Sprite):
 		self.lasers = []
 		self.cooldown = 0
 		self.on_the_edge = 0
+		self.laser_sound = laser_sound
 
 		self.was_key_pressed = 0
 
 
 	def fire_laser(self):
 		if (self.cooldown <= 0):
-			self.lasers.append(Laser(screen, self.l_filename, self.x + (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
-			self.lasers.append(Laser(screen, self.l_filename, self.x - (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
+			self.lasers.append(Laser(self.screen, self.l_filename, self.x + (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
+			self.lasers.append(Laser(self.screen, self.l_filename, self.x - (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
 			self.cooldown = 0.5
 
 	def reset_position(self):
@@ -144,6 +145,7 @@ if __name__ == "__main__":
         BACKGROUND_COLOR = (0, 0, 0)
         LASER_IMAGE = 'assets/assets/laser.gif'
 	BC_IMAGE = 'assets/assets/battlecruiser.gif'
+	LASER_SOUND = 'assets/assets/laser.wav'
         
         pygame.init()
 

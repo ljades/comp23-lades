@@ -1,0 +1,38 @@
+import pygame, os, sys, Laser
+from pygame.locals import *
+from Laser import Laser
+from Enemy import Enemy
+from Battlecruiser import Battlecruiser
+from random import randint
+
+if __name__ == "__main__":
+    # Check if sound and font are supported
+    if not pygame.font:
+        print "Warning, fonts disabled"
+    if not pygame.mixer:
+        print "Warning, sound disabled"
+
+    #Constants
+    FPS = 50
+    SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+    BC_MAX_SPEED = 8
+    LASER_SPEED = 12
+    BC_X_ACCEL = 5
+    BC_Y_ACCEL = 8
+    BACKGROUND_COLOR = (0, 0, 0)
+    LASER_IMAGE = 'assets/assets/laser.gif'
+    BC_IMAGE = 'assets/assets/battlecruiser.gif'
+    ENEMY_IMAGE = 'assets/assets/mutalisk.gif'
+    EXPLODE_IMAGE = 'assets/assets/laser_explotion.gif'
+    ENEMY_MAX_SPEED = 7
+
+    pygame.init()
+
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption('Battlecruiser, Reporting!')
+    clock = pygame.time.Clock()
+    font = pygame.font.Font(None, 28)
+
+    enemies = []
+
+    
