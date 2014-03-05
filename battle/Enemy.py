@@ -64,6 +64,7 @@ class Enemy(pygame.sprite.Sprite):
                         self.screen.blit(self.enemy_image, draw_pos)
 		elif (self.active == True and self.exploding == True):
 			draw_pos = self.explosion_image.get_rect().move(self.x - self.image_w2 / 2, self.y - self.image_h2 / 2)
+			self.screen.blit(self.explosion_image, draw_pos)
 
 
 if __name__ == "__main__":

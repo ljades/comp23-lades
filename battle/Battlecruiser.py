@@ -23,7 +23,13 @@ class Battlecruiser(pygame.sprite.Sprite):
                 self.rect = self.bc_image.get_rect()
 
                 self.image_w, self.image_h = self.bc_image.get_size()
-
+		try:
+			temp_thing = pygame.mixer.Sound(laser_sound)
+		except pygame.error, message:
+                        print "Cannot load sound: " + laser_sound
+                        raise SystemExit, message
+		
+		self.laser_sound = temp_thing
                 self.x = init_x
                 self.y = init_y
 		self.init_xy = [init_x, init_y]
@@ -44,7 +50,6 @@ class Battlecruiser(pygame.sprite.Sprite):
 		self.lasers = []
 		self.cooldown = 0
 		self.on_the_edge = 0
-		self.laser_sound = laser_sound
 
 		self.was_key_pressed = 0
 
@@ -54,7 +59,7 @@ class Battlecruiser(pygame.sprite.Sprite):
 			self.lasers.append(Laser(self.screen, self.l_filename, self.x + (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
 			self.lasers.append(Laser(self.screen, self.l_filename, self.x - (self.bc_image.get_size()[0] / 2), self.y, 0, -1*self.laser_speed))
 			self.cooldown = 0.5
-
+			self.laser_sound.play()
 	def reset_position(self):
 		self.x, self.y = self.init_xy
 		self.dx = 0
