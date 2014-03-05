@@ -140,6 +140,7 @@ if __name__ == "__main__":
             game_over = False
             score = 0
             counter = 0
+            player = Battlecruiser(screen, BC_IMAGE, LASER_IMAGE, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, BC_MAX_SPEED, LASER_SPEED, BC_X_ACCEL, BC_Y_ACCEL, LASER_SOUND)
             y_pos_on_scroll = -1*background_image.get_size()[1] + SCREEN_HEIGHT
             enemies = []
             gover_text = giantfont.render("GAME OVER! PRESS ENTER TO PLAY AGAIN", 1, (60, 255, 30))
