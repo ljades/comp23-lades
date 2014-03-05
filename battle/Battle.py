@@ -27,6 +27,7 @@ if __name__ == "__main__":
     LASER_SOUND = 'assets/assets/laser.wav'
     BACKGROUND_IMAGE = 'assets/assets/ram_aras.png'
     BACKGROUND_MUSIC = 'assets/assets/main_theme.wav'
+    EXPLOSION_SOUND = 'assets/assets/death_explode.wav'
     ENEMY_MAX_SPEED = 4
 
     pygame.init()
@@ -85,7 +86,7 @@ if __name__ == "__main__":
 
         ''' Generate a new enemy every so often '''
         if (len(enemies) <= 10 and counter % (FPS * 2) == 0):
-            enemies.append(Enemy(screen, ENEMY_IMAGE, EXPLODE_IMAGE, randint(0, SCREEN_WIDTH), 1, randint(-1*ENEMY_MAX_SPEED, ENEMY_MAX_SPEED), ENEMY_MAX_SPEED))
+            enemies.append(Enemy(screen, ENEMY_IMAGE, EXPLODE_IMAGE, randint(0, SCREEN_WIDTH), 1, randint(-1*ENEMY_MAX_SPEED, ENEMY_MAX_SPEED), ENEMY_MAX_SPEED, ))
 
 
         #collision detection
