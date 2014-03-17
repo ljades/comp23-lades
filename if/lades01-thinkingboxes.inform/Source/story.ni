@@ -23,7 +23,7 @@ Every turn:
 		If health is 16:
 			say "You begin to feel woozy, and your vision blurs for a second, but then you feel normal again.";
 		if health is 14:
-			say "Once again, the gas hasn't felt that impactful to your health, but your previous symptoms get stronger, and you start to sweat uncontrollably as hyperthermia takes over.";
+			say "Once again, the gas hasn't felt that impacting to your health, but your previous symptoms get stronger, and you start to sweat uncontrollably as hyperthermia takes over.";
 		If health is 12:
 			say "A stinging pain hits your throat, and you begin to cough violently.";
 		If health is 8:
@@ -107,14 +107,14 @@ Every turn:
 			Increase score by 5;
 			Now Check2 is 0;
 	if player is in the First Wrong Room:
-		say "Mindasa says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber.";
+		say "Mindasa says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber. Deja vu ensues as the voice on the loudspeaker repeats itself, yet you feel just as sick as before:";
 		Now the player is in the Testing Chamber;
 	if player is in the Second Wrong Room:
-		say "Wendy says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber.";
+		say "Wendy says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber. Deja vu ensues as the voice on the loudspeaker repeats itself, yet you feel just as sick as before:";
 		Now the player is in the Testing Chamber;
 	if player is in the Room of Despair:
 		if Check3 is 1:
-			say "You overhear the creepy voice on the loadspeaker say, in his usual calm and overbearing voice, 'Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don't you take a break on this nice bed in front of you? I can't think of any harm in taking a rest in the Room of Despair, after all...heheheh.' The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.";
+			say "You overhear the creepy voice on the loudspeaker say, in his usual calm and overbearing voice, 'Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don't you take a break on this nice bed in front of you? I can't think of any harm in taking a rest in the Room of Despair, after all...heheheh.' The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.";
 			Increase score by 5;
 			Now Check3 is 0;
 			Now the Blue Door is locked;

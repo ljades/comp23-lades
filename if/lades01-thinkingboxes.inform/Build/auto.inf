@@ -29,7 +29,7 @@ Array UUID_ARRAY string "UUID://CDF40674-AD85-11E3-9F12-E0B9A5F55428//";
 Constant Story "test-story";
 Constant Headline "An Interactive Fiction";
 Constant Story_Author SC_2;
-Serial "140316";
+Serial "140317";
 
 Default Story 0;
 Default Headline 0;
@@ -470,6 +470,7 @@ Array EMPTY_RULEBOOK -> $ff $ff $ff $ff;
 
 [ Prop_Falsity reason obj; return 0; ];
 
+Global MAX_SCORE = 100;
 
 #Ifndef MAX_SCORE;
 Global MAX_SCORE = 0;
@@ -9355,7 +9356,6 @@ Array Map_Storage -->
  0 0 0 0 0 0 I119_blood_door 0 0 0 0 0 ! Exits from: I120_dead_room
  I121_silver_staircase 0 0 I123_wooden_door 0 0 0 0 0 0 0 0 ! Exits from: I122_yellow_room
  I123_wooden_door 0 0 0 0 0 0 I125_silver_door 0 0 0 0 ! Exits from: I124_dead_end
- 0 0 0 0 0 0 I124_dead_end I95_winning_room 0 0 0 0 ! Exits from: I125_silver_door
 ;
 
 Class VPH_Class;
@@ -9535,9 +9535,9 @@ Object I46_north "" Compass
     with IK3_Link I47_northeast
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I49_south
     with short_name "north"
+    with article SC_3
 ;
 
 Object I47_northeast "" Compass
@@ -9550,9 +9550,9 @@ Object I47_northeast "" Compass
     with IK3_Link I48_northwest
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I51_southwest
     with short_name "northeast"
+    with article SC_3
 ;
 
 Object I48_northwest "" Compass
@@ -9565,9 +9565,9 @@ Object I48_northwest "" Compass
     with IK3_Link I49_south
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I50_southeast
     with short_name "northwest"
+    with article SC_3
 ;
 
 Object I49_south "" Compass
@@ -9580,9 +9580,9 @@ Object I49_south "" Compass
     with IK3_Link I50_southeast
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I46_north
     with short_name "south"
+    with article SC_3
 ;
 
 Object I50_southeast "" Compass
@@ -9595,9 +9595,9 @@ Object I50_southeast "" Compass
     with IK3_Link I51_southwest
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I48_northwest
     with short_name "southeast"
+    with article SC_3
 ;
 
 Object I51_southwest "" Compass
@@ -9610,9 +9610,9 @@ Object I51_southwest "" Compass
     with IK3_Link I52_east
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I47_northeast
     with short_name "southwest"
+    with article SC_3
 ;
 
 Object I52_east "" Compass
@@ -9625,9 +9625,9 @@ Object I52_east "" Compass
     with IK3_Link I53_west
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I53_west
     with short_name "east"
+    with article SC_3
 ;
 
 Object I53_west "" Compass
@@ -9640,9 +9640,9 @@ Object I53_west "" Compass
     with IK3_Link I54_up
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I52_east
     with short_name "west"
+    with article SC_3
 ;
 
 Object I54_up "" Compass
@@ -9655,9 +9655,9 @@ Object I54_up "" Compass
     with IK3_Link I55_down
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I55_down
     with short_name "up"
+    with article SC_3
 ;
 
 Object I55_down "" Compass
@@ -9670,9 +9670,9 @@ Object I55_down "" Compass
     with IK3_Link in_obj
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite I54_up
     with short_name "down"
+    with article SC_3
 ;
 
 Object in_obj "" Compass
@@ -9685,9 +9685,9 @@ Object in_obj "" Compass
     with IK3_Link out_obj
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite out_obj
     with short_name "inside"
+    with article SC_3
 ;
 
 Object out_obj "" Compass
@@ -9700,9 +9700,9 @@ Object out_obj "" Compass
     with IK3_Link nothing
     with vector 0
     with list_together 0
-    with article SC_3
     with p9_opposite in_obj
     with short_name "outside"
+    with article SC_3
 ;
 
 Object selfobj ""
@@ -10283,9 +10283,9 @@ Object I123_wooden_door ""
     with KD_Count 4
     has mark_as_thing
     with IK2_Count 22
-    with IK2_Link nothing
+    with IK2_Link I125_silver_door
     with IK4_Count 9
-    with IK4_Link nothing
+    with IK4_Link I125_silver_door
     with vector 0
     with door_dir [ loc; loc = location;
             if (loc == thedark) loc = real_location;
@@ -10304,7 +10304,7 @@ Object I124_dead_end ""
     with KD_Count 1
     has mark_as_room
     with IK1_Count 10
-    with IK1_Link I125_silver_door
+    with IK1_Link nothing
     with vector 0
     with room_index -1
     with list_together 0
@@ -10312,15 +10312,26 @@ Object I124_dead_end ""
 ;
 
 Object I125_silver_door ""
-    class K1_room
+    class K4_door
     with name 'silver' 'door' 
-    with KD_Count 1
-    has mark_as_room
-    with IK1_Count 11
-    with IK1_Link nothing
+    with action_bitmap 0 0 0 0 0 0 
+    with KD_Count 4
+    has mark_as_thing
+    with IK2_Count 23
+    with IK2_Link nothing
+    with IK4_Count 10
+    with IK4_Link nothing
     with vector 0
-    with room_index -1
+    with door_dir [ loc; loc = location;
+            if (loc == thedark) loc = real_location;
+            if (loc == I124_dead_end) return I53_west; return I52_east; ],
+    with door_to [ loc; loc = location;
+            if (loc == thedark) loc = real_location;
+            if (loc == I124_dead_end) return I95_winning_room; return I124_dead_end; ],
+    with found_in I124_dead_end I95_winning_room
     with list_together 0
+    has lockable
+    has locked
     with short_name "Silver Door"
 ;
 
@@ -10359,12 +10370,13 @@ Array Global_Vars -->
   (0) ! 33
   (0) ! 34
   (0) ! 43
-  (20) ! 51
+  (18) ! 51
   (1) ! 52
   (1) ! 53
   (1) ! 54
   (1) ! 55
   (1) ! 56
+  (1) ! 57
 ;
 
 
@@ -10376,8 +10388,8 @@ Array tab_0_2 table $2066 2  (Consult_Grammar_96)  (Consult_Grammar_97)  (Consul
 Array tab_0_3 table $0067 3  (IMMEDIATELY_RESTART_VM_R)  (IMMEDIATELY_RESTORE_SAVED_R)  TABLE_NOVALUE (IMMEDIATELY_QUIT_R)  (IMMEDIATELY_UNDO_R) ;
 Array tab_0_4 table $0068 4  TABLE_NOVALUE TABLE_NOVALUE (V26_amusing_a_victorious_pla)  TABLE_NOVALUE TABLE_NOVALUE;
 Array T1_locale_priorities table  tab_1_0 tab_1_1;
-Array tab_1_0 table $0869 NULL  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
-Array tab_1_1 table $446a 5  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_0 table $0869 NULL  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_1 table $446a 5  TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE TABLE_NOVALUE;
 Array TB_Blanks -> 
   ! For table T0_final_question_options
   $00  ! Column 0
@@ -10387,7 +10399,7 @@ Array TB_Blanks ->
   $1b  ! Column 4
   
   ! For table T1_locale_priorities
-  $ff $ff $ff  ! Column 1
+  $ff $ff $ff $01  ! Column 1
   
   ! End of table
   NULL NULL;
@@ -10939,13 +10951,15 @@ Array ActionHappened --> 0 0 0 0 0 0;
 ! ----------------------------------------------------------------------------------------------------
 ! Rules in rulebook: Every turn (B9_every_turn)
 ! ----------------------------------------------------------------------------------------------------
-! Rule 1/4 ! Every turn:
+! Rule 1/5 ! Every turn:
 !   === which is equally specific with ===
-! Rule 2/4 ! Every turn:
+! Rule 2/5 ! Every turn:
 !   === which is equally specific with ===
-! Rule 3/4 ! Every turn:
+! Rule 3/5 ! Every turn:
 !   === which is equally specific with ===
-! Rule 4/4 ! Every turn:
+! Rule 4/5 ! Every turn:
+!   === which is equally specific with ===
+! Rule 5/5 ! Every turn:
 ! ----------------------------------------------------------------------------------------------------
 ! No specific request
 ! Every turn:
@@ -10957,8 +10971,8 @@ Array ActionHappened --> 0 0 0 0 0 0;
          ! [2: decrease health by 1]
           (Global_Vars-->9) = (Global_Vars-->9) - 1; 
          ! phrase 3
-         ! [3: if health is 18 begin]
-          if ((((Global_Vars-->9) == 18)))  {
+         ! [3: if health is 16 begin]
+          if ((((Global_Vars-->9) == 16)))  {
             ! phrase 4
             ! [4: say ~You begin to feel woozy, and your vision blurs for a second, but then you feel normal again.~]
             say__p=1;ParaContent();  print (PrintText) SC_12;  new_line; .L_Say2; .L_SayX2;
@@ -10967,47 +10981,57 @@ Array ActionHappened --> 0 0 0 0 0 0;
             }
 
          ! phrase 6
-         ! [6: if health is 12 begin]
-          if ((((Global_Vars-->9) == 12)))  {
+         ! [6: if health is 14 begin]
+          if ((((Global_Vars-->9) == 14)))  {
             ! phrase 7
-            ! [7: say ~A stinging pain hits your throat, and you begin to cough violently.~]
+            ! [7: say ~Once again, the gas hasn't felt that impacting to your health, but your previous symptoms get stronger, and you start to sweat uncontrollably as hyperthermia takes over.~]
             say__p=1;ParaContent();  print (PrintText) SC_13;  new_line; .L_Say3; .L_SayX3;
             ! phrase 8
             ! [8: end if]
             }
 
          ! phrase 9
-         ! [9: if health is 8 begin]
-          if ((((Global_Vars-->9) == 8)))  {
+         ! [9: if health is 12 begin]
+          if ((((Global_Vars-->9) == 12)))  {
             ! phrase 10
-            ! [10: say ~Your stomach suddenly feels inflamed. This disease is catching up on you. You get sick and stumble to the floor. You pick yourself back up, but you begin to feel yourself weakening.~]
+            ! [10: say ~A stinging pain hits your throat, and you begin to cough violently.~]
             say__p=1;ParaContent();  print (PrintText) SC_14;  new_line; .L_Say4; .L_SayX4;
             ! phrase 11
             ! [11: end if]
             }
 
          ! phrase 12
-         ! [12: if health is 4 begin]
-          if ((((Global_Vars-->9) == 4)))  {
+         ! [12: if health is 8 begin]
+          if ((((Global_Vars-->9) == 8)))  {
             ! phrase 13
-            ! [13: say ~Your vision begins to blur, but this time it doesn't go away. You can still see ahead of you, but just barely. Your muscles weaken, and every further movement requires limping.~]
+            ! [13: say ~Your stomach suddenly feels inflamed. This disease is catching up on you. You get sick and stumble to the floor. You pick yourself back up, but you begin to feel yourself weakening.~]
             say__p=1;ParaContent();  print (PrintText) SC_15;  new_line; .L_Say5; .L_SayX5;
             ! phrase 14
             ! [14: end if]
             }
 
          ! phrase 15
-         ! [15: if health is 0 begin]
-          if ((((Global_Vars-->9) == 0)))  {
+         ! [15: if health is 4 begin]
+          if ((((Global_Vars-->9) == 4)))  {
             ! phrase 16
-            ! [16: end the story saying ~The pain is too much for you to handle. The poison has stretched to every part of your body, and you collapse to the ground. The voice in the loudspeakers says, calmly, 'Ah, that's a shame. I was really rooting for him. Oh well, onto the next test subject.'~]
-             deadflag=SC_16; story_complete=false; 
+            ! [16: say ~Your vision begins to blur, but this time it doesn't go away. You can still see ahead of you, but just barely. Your muscles weaken, and every further movement requires limping.~]
+            say__p=1;ParaContent();  print (PrintText) SC_16;  new_line; .L_Say6; .L_SayX6;
             ! phrase 17
             ! [17: end if]
             }
 
          ! phrase 18
-         ! [18: end unless]
+         ! [18: if health is 0 begin]
+          if ((((Global_Vars-->9) == 0)))  {
+            ! phrase 19
+            ! [19: end the story saying ~The pain is too much for you to handle. The poison has stretched to every part of your body, and you collapse to the ground. The voice in the loudspeakers says, calmly, 'Ah, that's a shame. I was really rooting for him. Oh well, onto the next test subject.'~]
+             deadflag=SC_17; story_complete=false; 
+            ! phrase 20
+            ! [20: end if]
+            }
+
+         ! phrase 21
+         ! [21: end unless]
          }
 
    rfalse;
@@ -11020,7 +11044,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if ((((Adj_60_t1_v9(I101_box__1)))))  {
          ! phrase 2
          ! [2: end the story saying ~As you open the crate, the strange voice says, 'I am truly disappointed in you. Perhaps the next test subject can do better.' Inside the box is a small bomb with a clown face labeled on it. It detonates as soon as the strange voice stops. You die instantly.~]
-          deadflag=SC_17; story_complete=false; 
+          deadflag=SC_18; story_complete=false; 
          ! phrase 3
          ! [3: end if]
          }
@@ -11030,7 +11054,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if ((((Adj_60_t1_v9(I102_box__2)))))  {
          ! phrase 5
          ! [5: end the story saying ~As you open the crate, the strange voice says, 'I am truly disappointed in you. Perhaps the next test subject can do better.' Inside the box is a small bomb with a clown face labeled on it. It detonates as soon as the strange voice stops. You die instantly.~]
-          deadflag=SC_17; story_complete=false; 
+          deadflag=SC_18; story_complete=false; 
          ! phrase 6
          ! [6: end if]
          }
@@ -11040,7 +11064,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if ((((Adj_60_t1_v9(I103_box__3)))))  {
          ! phrase 8
          ! [8: end the story saying ~As you open the crate, the strange voice says, 'I am truly disappointed in you. Perhaps the next test subject can do better.' Inside the box is a small bomb with a clown face labeled on it. It detonates as soon as the strange voice stops. You die instantly.~]
-          deadflag=SC_17; story_complete=false; 
+          deadflag=SC_18; story_complete=false; 
          ! phrase 9
          ! [9: end if]
          }
@@ -11050,7 +11074,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if ((((Adj_60_t1_v9(I105_box__5)))))  {
          ! phrase 11
          ! [11: end the story saying ~As you open the crate, the strange voice says, 'I am truly disappointed in you. Perhaps the next test subject can do better.' Inside the box is a small bomb with a clown face labeled on it. It detonates as soon as the strange voice stops. You die instantly.~]
-          deadflag=SC_17; story_complete=false; 
+          deadflag=SC_18; story_complete=false; 
          ! phrase 12
          ! [12: end if]
          }
@@ -11082,10 +11106,10 @@ Array ActionHappened --> 0 0 0 0 0 0;
           if ((((Global_Vars-->10) == 1)))  {
             ! phrase 21
             ! [21: say ~Once in the First Riddle Room, the strange voice says, 'Oh, I'm not sure if I'd like you to take on this challenge--you may hurt yourself, after all. But if you insist, you must know that each room contains a riddle that you'll need to solve. Solve it, and the door connecting to the next room will unlock. It's very possible that there is an end to this maze after, possibly, the seventh room. Will it lead you to safety? It looks like you'll have to find that out yourself. If it were up to me, I wish you'd just sit down...and rest...but regardless, try not to hurt yourself, heheheh.' The loudspeaker cuts out.~]
-            say__p=1;ParaContent();  print (PrintText) SC_18;  new_line; .L_Say6; .L_SayX6;
+            say__p=1;ParaContent();  print (PrintText) SC_19;  new_line; .L_Say7; .L_SayX7;
             ! phrase 22
             ! [22: say ~A man stands in the center of the room in a white button-down, khaki pants, and a large name tag with the name written, 'Kinder Gardener'. He says as you approach him, 'I really wish you wouldn't try this door, but if you insist, two plus two must equal...'. There are five closed boxes in front of him, each with a button on the top that opens it.~]
-            say__p=1;ParaContent();  print (PrintText) SC_19;  new_line; .L_Say7; .L_SayX7;
+            say__p=1;ParaContent();  print (PrintText) SC_20;  new_line; .L_Say8; .L_SayX8;
             ! phrase 23
             ! [23: increase score by 5]
              score = score + 5; 
@@ -11113,16 +11137,16 @@ Array ActionHappened --> 0 0 0 0 0 0;
           if ((((Global_Vars-->11) == 1)))  {
             ! phrase 3
             ! [3: say ~Two women stand side by side in the next room. To the north is a blue door, to the east is a green door, and to the south is a red door (the door you entered through is to the west). Both are dressed identically, in black button-down blouses, white sports jackets and white pants. The woman on the left has blond hair and wears a name tag that says, 'Mindasa'. The woman on the right has brown hair and wears a name tag that says, 'Wendy.' Other than these differences, both are nearly identical in every way. Both women say, perfectly in unison, 'Welcome to the second room! We're so ecstatic you made it through the first riddle! It was designed for kindergarteners, so we wouldn't expect any less from you! And don't worry, this one won't be nearly as deadly if you fail. Simply FOLLOW OUR INSTRUCTIONS EXACTLY to find out which door to enter through, and you will make it to the next room in this wondrous maze!'~]
-            say__p=1;ParaContent();  print (PrintText) SC_20;  new_line; .L_Say8; .L_SayX8;
+            say__p=1;ParaContent();  print (PrintText) SC_21;  new_line; .L_Say9; .L_SayX9;
             ! phrase 4
             ! [4: say ~[line break] Mindasa recites, in such monotony that she could be mistaken for an android, 'There is a zero percent chance that you'll want to follow me if your intention is to pass through to what will be the wrong room. But then again, I have been known to lie one hundred percent of the time.' Mindasa then turns her back towards you and walks towards the blue door to the north. She opens it, walks through, and closes it behind her.~]
-            say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_21;  new_line; .L_Say9; .L_SayX9;
+            say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_22;  new_line; .L_Say10; .L_SayX10;
             ! phrase 5
             ! [5: now mindasa is in the first wrong room]
              MoveObject(I108_mindasa_gasho,I113_first_wrong_room); 
             ! phrase 6
             ! [6: say ~[line break] Wendy recites, in an identical tone and voice, 'Mindasa is correct, and I will lead you to the right room room. One of these two things I just said is a lie, but this following statement is absolutely true: there is only one correct room.' Wendy then turns her back towards you and walks towards the green door to the east. She opens it, walks through, and closes it behind her.~]
-            say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_22;  new_line; .L_Say10; .L_SayX10;
+            say__p=1;ParaContent();  new_line; ParaContent();  print (PrintText) SC_23;  new_line; .L_Say11; .L_SayX11;
             ! phrase 7
             ! [7: now wendy is in the second wrong room]
              MoveObject(I109_wendy_gasho,I114_second_wrong_room); 
@@ -11144,8 +11168,8 @@ Array ActionHappened --> 0 0 0 0 0 0;
       ! [12: if player is in the first wrong room begin]
        if (((I113_first_wrong_room == ContainerOf(player))))  {
          ! phrase 13
-         ! [13: say ~Mindasa says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber.~]
-         say__p=1;ParaContent();  print (PrintText) SC_23;  new_line; .L_Say11; .L_SayX11;
+         ! [13: say ~Mindasa says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber. Deja vu ensues as the voice on the loudspeaker repeats itself, yet you feel just as sick as before:~]
+         say__p=1;ParaContent();  print (PrintText) SC_24;  .L_Say12; .L_SayX12;
          ! phrase 14
          ! [14: now the player is in the testing chamber]
           MoveObject(player,I88_testing_chamber); 
@@ -11157,8 +11181,8 @@ Array ActionHappened --> 0 0 0 0 0 0;
       ! [16: if player is in the second wrong room begin]
        if (((I114_second_wrong_room == ContainerOf(player))))  {
          ! phrase 17
-         ! [17: say ~Wendy says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber.~]
-         say__p=1;ParaContent();  print (PrintText) SC_24;  new_line; .L_Say12; .L_SayX12;
+         ! [17: say ~Wendy says, in an almost gleeful tone, 'Oh! I'm sorry! It seems you guessed...wrong...' Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, 'But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!' You awaken moments later, back in your previous condition, in the Testing Chamber. Deja vu ensues as the voice on the loudspeaker repeats itself, yet you feel just as sick as before:~]
+         say__p=1;ParaContent();  print (PrintText) SC_25;  .L_Say13; .L_SayX13;
          ! phrase 18
          ! [18: now the player is in the testing chamber]
           MoveObject(player,I88_testing_chamber); 
@@ -11173,8 +11197,8 @@ Array ActionHappened --> 0 0 0 0 0 0;
          ! [21: if check3 is 1 begin]
           if ((((Global_Vars-->12) == 1)))  {
             ! phrase 22
-            ! [22: say ~You overhear the creepy voice on the loadspeaker say, in his usual calm and overbearing voice, 'Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don't you take a break on this nice bed in front of you? I can't think of any harm in taking a rest in the Room of Despair, after all...heheheh.' The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.~]
-            say__p=1;ParaContent();  print (PrintText) SC_25;  new_line; .L_Say13; .L_SayX13;
+            ! [22: say ~You overhear the creepy voice on the loudspeaker say, in his usual calm and overbearing voice, 'Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don't you take a break on this nice bed in front of you? I can't think of any harm in taking a rest in the Room of Despair, after all...heheheh.' The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.~]
+            say__p=1;ParaContent();  print (PrintText) SC_26;  new_line; .L_Say14; .L_SayX14;
             ! phrase 23
             ! [23: increase score by 5]
              score = score + 5; 
@@ -11204,11 +11228,11 @@ Array ActionHappened --> 0 0 0 0 0 0;
       ! [1: if player is in the nightmare room and check4 is 1 begin]
        if ((((I118_nightmare_room == ContainerOf(player)))) && ((((Global_Vars-->13) == 1))))  {
          ! phrase 2
-         ! [2: say ~As you enter the room, labeled by the White Door as the 'Nightmare Room,' the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...'KCABNRUT' is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words 'KCABNRUT' inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. [line break] [line break] Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.~]
-         say__p=1;ParaContent();  print (PrintText) SC_26; ParaContent();  new_line; ParaContent();  print (PrintText) SC_27; ParaContent();  new_line; ParaContent();  print (PrintText) SC_28;  new_line; .L_Say14; .L_SayX14;
-         ! phrase 3
-         ! [3: increase score by 5]
+         ! [2: increase score by 5]
           score = score + 5; 
+         ! phrase 3
+         ! [3: say ~As you enter the room, labeled by the White Door as the 'Nightmare Room,' the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...'KCABNRUT' is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words 'KCABNRUT' inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. [line break] [line break] Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.~]
+         say__p=1;ParaContent();  print (PrintText) SC_27; ParaContent();  new_line; ParaContent();  print (PrintText) SC_28; ParaContent();  new_line; ParaContent();  print (PrintText) SC_29;  new_line; .L_Say15; .L_SayX15;
          ! phrase 4
          ! [4: now check4 is 0]
           (Global_Vars-->13) = 0; 
@@ -11227,7 +11251,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if (((I120_dead_room == ContainerOf(player))))  {
          ! phrase 9
          ! [9: end the story saying ~As you jolt to the other end of the room and open the door there, you find no solace at the other end of the bloody door. A room so heavily concentrated in that same noxious gas you had just experienced awaits at the other end: the Dead Room. In small concentrations, it's a powerful hallucinogen. In higher concentrations, it drives the mind so mad to the point where the brain shuts down almost immediately. You collapse, dying instantly. The strange voice says, 'If only he had been better at following instructions. Perhaps the next test subject can do better.'~]
-          deadflag=SC_29; story_complete=false; 
+          deadflag=SC_30; story_complete=false; 
          ! phrase 10
          ! [10: end if]
          }
@@ -11243,7 +11267,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
              if ((((Global_Vars-->14) == 1)))  {
                ! phrase 14
                ! [14: say ~As you desperately TURN BACK and as the walls instruct, you jolt right back to where you last left off, the Room of Despair. But something is different; the bed has disappeared, and you notice that the Silver Staircase is no longer locked.~]
-               say__p=1;ParaContent();  print (PrintText) SC_30;  new_line; .L_Say15; .L_SayX15;
+               say__p=1;ParaContent();  print (PrintText) SC_31;  new_line; .L_Say16; .L_SayX16;
                ! phrase 15
                ! [15: increase score by 5]
                 score = score + 5; 
@@ -11267,7 +11291,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if (((I122_yellow_room == ContainerOf(player))))  {
          ! phrase 21
          ! [21: say ~You walk up the silver staircase. You enter an empty, yellow room. Nothing is in the room except a plain wooden door at the other end, and the silver staircase you just walked up.~]
-         say__p=1;ParaContent();  print (PrintText) SC_31;  new_line; .L_Say16; .L_SayX16;
+         say__p=1;ParaContent();  print (PrintText) SC_32;  new_line; .L_Say17; .L_SayX17;
          ! phrase 22
          ! [22: end if]
          }
@@ -11277,9 +11301,56 @@ Array ActionHappened --> 0 0 0 0 0 0;
        if (((I124_dead_end == ContainerOf(player))))  {
          ! phrase 24
          ! [24: say ~You walk into the next room. There is nothing in it. There's a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, 'Hmph, it seems you've reached the dead end. That's a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don't leave a mess for the next subject.' The voice cuts out. There is a deadening silence in the room.~]
-         say__p=1;ParaContent();  print (PrintText) SC_32;  new_line; .L_Say17; .L_SayX17;
+         say__p=1;ParaContent();  print (PrintText) SC_33;  new_line; .L_Say18; .L_SayX18;
          ! phrase 25
          ! [25: end if]
+         }
+
+   rfalse;
+];
+! No specific request
+! Every turn:
+[ R_745 ;
+      ! phrase 1
+      ! [1: if the time of day is 1:00 am or the time of day is after 1:00 am begin]
+       if ((((the_time == 60))) || (( (((the_time+20*ONE_HOUR)%(TWENTY_FOUR_HOURS))>((60+20*ONE_HOUR)%(TWENTY_FOUR_HOURS))) )))  {
+         ! phrase 2
+         ! [2: if finalcheck is 1 begin]
+          if ((((Global_Vars-->15) == 1)))  {
+            ! phrase 3
+            ! [3: now the silver door is unlocked]
+             (Adj_66_t2_v9(I125_silver_door)); 
+            ! phrase 4
+            ! [4: now the true door is unlocked]
+             (Adj_66_t2_v9(I94_true_door)); 
+            ! phrase 5
+            ! [5: now health is 100]
+             (Global_Vars-->9) = 100; 
+            ! phrase 6
+            ! [6: say ~You hear gears turn. There is metal churning, string clinks and clanks to be heard. All debilitations your sickness has caused suddenly go away. The voice returns to the loudspeakers: 'Well done, sir! It seems that we have another test subject that has passed and not, well, dropped dead! Why don't you come meet me in the Winning Room? You'll find that both the Silver Door and the True Door are now opened for you.'~]
+            say__p=1;ParaContent();  print (PrintText) SC_34;  new_line; .L_Say19; .L_SayX19;
+            ! phrase 7
+            ! [7: now finalcheck is 0]
+             (Global_Vars-->15) = 0; 
+            ! phrase 8
+            ! [8: end if]
+            }
+
+         ! phrase 9
+         ! [9: end if]
+         }
+
+      ! phrase 10
+      ! [10: if player is in the winning room begin]
+       if (((I95_winning_room == ContainerOf(player))))  {
+         ! phrase 11
+         ! [11: now score is 100]
+          score = 100; 
+         ! phrase 12
+         ! [12: end the story saying ~As you enter this mysterious final room, you see a man of great bulk in a black suit standing in the center of the room. He wears a big smile, and in both hands he holds two peculiar documents. 'Congratulations, young lad! Here's your diploma! Now walk out the exit behind me so you can get out there and tackle the real world!' Enraged that you just realized that this was meant to be a sadistic way of teaching you about thinking outside the box and following specific instructions no matter how peculiar they seem, yet powerless to do anything because you realize that you have no real sway over what just happened, you resign yourself and trudge out the back door. Congratulations, you just passed some arbitrary tests to prove your worth to a bunch of people who didn't care about you in the long run! Are you happy with yourself?~]
+          deadflag=SC_35; story_complete=false; 
+         ! phrase 13
+         ! [13: end if]
          }
 
    rfalse;
@@ -11317,7 +11388,7 @@ Array ActionHappened --> 0 0 0 0 0 0;
 [ R_20 ;
       ! phrase 1
       ! [1: if the current item from the multiple object list is not nothing , say ~[current item from the multiple object list]: [run paragraph on]~]
-       if (((~~((multiple_object_item == nothing))))) { say__p=1;ParaContent();  print (PrintShortName) multiple_object_item; ParaContent();  print (PrintText) SC_33; ParaContent();  RunParagraphOn();  .L_Say18; .L_SayX18;  }
+       if (((~~((multiple_object_item == nothing))))) { say__p=1;ParaContent();  print (PrintShortName) multiple_object_item; ParaContent();  print (PrintText) SC_36; ParaContent();  RunParagraphOn();  .L_Say20; .L_SayX20;  }
    rfalse;
 ];
 ! No specific request
@@ -11697,7 +11768,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_59, 59);
       ! phrase 1
       ! [1: say the printed plural name of the item]
-      say__p=1;ParaContent(); @push self;  print (PrintText) GProperty(9, self=t_0,plural); @pull self;  .L_Say19; .L_SayX19;
+      say__p=1;ParaContent(); @push self;  print (PrintText) GProperty(9, self=t_0,plural); @pull self;  .L_Say21; .L_SayX21;
       RulebookSucceeds(); rtrue;
    } ! Runs only when pattern matches
    else if (debug_rules > 1) DB_Rule(R_59, 59, true);
@@ -11720,7 +11791,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_60, 60);
       ! phrase 1
       ! [1: say ~[listing group size in words] ~]
-      say__p=1;ParaContent();  print (number) say__n=(listing_size); ParaContent();  print (PrintText) SC_27;  .L_Say20; .L_SayX20;
+      say__p=1;ParaContent();  print (number) say__n=(listing_size); ParaContent();  print (PrintText) SC_28;  .L_Say22; .L_SayX22;
       ! phrase 2
       ! [2: carry out the printing the plural name activity with the item]
        CarryOutActivity(V1_printing_the_plural_name_, t_0); 
@@ -11933,7 +12004,7 @@ self = noun;
        if (((t_0 < 1))) {  if (ProcessRulebook(IMMEDIATELY_QUIT_R)) rtrue;   }
       ! phrase 10
       ! [10: say ~Would you like to ~]
-      say__p=1;ParaContent();  print (PrintText) SC_34;  .L_Say21; .L_SayX21;
+      say__p=1;ParaContent();  print (PrintText) SC_37;  .L_Say23; .L_SayX23;
       ! phrase 11
       ! [11: repeat through the table of final question options begin]
        @push ct_0; @push ct_1;
@@ -11951,7 +12022,7 @@ self = noun;
                 if (( (ExistsTableLookUpEntry(ct_0,100,ct_1)) ))  {
                   ! phrase 15
                   ! [15: say final question wording entry]
-                  say__p=1;ParaContent();  print (PrintText) TableLookUpEntry(ct_0,100,ct_1);  .L_Say22; .L_SayX22;
+                  say__p=1;ParaContent();  print (PrintText) TableLookUpEntry(ct_0,100,ct_1);  .L_Say24; .L_SayX24;
                   ! phrase 16
                   ! [16: decrease named options count by 1]
                    t_0 = t_0 - 1; 
@@ -11960,23 +12031,23 @@ self = noun;
                    if (((t_0 == 0)))  {
                      ! phrase 18
                      ! [18: say ~?[line break]~]
-                     say__p=1;ParaContent();  print (PrintText) SC_35; ParaContent();  new_line;  .L_Say23; .L_SayX23;
+                     say__p=1;ParaContent();  print (PrintText) SC_38; ParaContent();  new_line;  .L_Say25; .L_SayX25;
                      ! phrase 19
                      ! [19: otherwise if the named options count is 1]
                       } else if (((t_0 == 1))) { 
                      ! phrase 20
                      ! [20: if the serial comma option is active , say ~,~]
-                      if ((((Adj_22_t1_v15(5))))) { say__p=1;ParaContent();  print (PrintText) SC_36;  .L_Say24; .L_SayX24;  }
+                      if ((((Adj_22_t1_v15(5))))) { say__p=1;ParaContent();  print (PrintText) SC_39;  .L_Say26; .L_SayX26;  }
                      ! phrase 21
                      ! [21: say ~ or ~]
-                     say__p=1;ParaContent();  print (PrintText) SC_37;  .L_Say25; .L_SayX25;
+                     say__p=1;ParaContent();  print (PrintText) SC_40;  .L_Say27; .L_SayX27;
                      ! phrase 22
                      ! [22: otherwise]
                      } else {
 
                      ! phrase 23
                      ! [23: say ~, ~]
-                     say__p=1;ParaContent();  print (PrintText) SC_38;  .L_Say26; .L_SayX26;
+                     say__p=1;ParaContent();  print (PrintText) SC_41;  .L_Say28; .L_SayX28;
                      ! phrase 24
                      ! [24: end if]
                      }
@@ -12005,7 +12076,7 @@ self = noun;
 [ R_68 ;
       ! phrase 1
       ! [1: say ~> [run paragraph on]~]
-      say__p=1;ParaContent();  print (PrintText) SC_39; ParaContent();  RunParagraphOn();  .L_Say27; .L_SayX27;
+      say__p=1;ParaContent();  print (PrintText) SC_42; ParaContent();  RunParagraphOn();  .L_Say29; .L_SayX29;
    rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -12258,40 +12329,40 @@ self = noun;
                 if (((t_0 ofclass K1_room)))  {
                   ! phrase 22
                   ! [22: if the domain is the location , say ~You ~]
-                   if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_40;  .L_Say28; .L_SayX28;  }
+                   if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_43;  .L_Say30; .L_SayX30;  }
                   ! phrase 23
                   ! [23: otherwise say ~In [the domain] you ~]
-                   else { say__p=1;ParaContent();  print (PrintText) SC_41; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_42;  .L_Say29; .L_SayX29;  }
+                   else { say__p=1;ParaContent();  print (PrintText) SC_44; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_45;  .L_Say31; .L_SayX31;  }
                   ! phrase 24
                   ! [24: otherwise if the domain is a supporter]
                    } else if (((t_0 ofclass K6_supporter))) { 
                   ! phrase 25
                   ! [25: say ~On [the domain] you ~]
-                  say__p=1;ParaContent();  print (PrintText) SC_43; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_42;  .L_Say30; .L_SayX30;
+                  say__p=1;ParaContent();  print (PrintText) SC_46; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_45;  .L_Say32; .L_SayX32;
                   ! phrase 26
                   ! [26: otherwise if the domain is an animal]
                    } else if (((t_0 ofclass K12_animal))) { 
                   ! phrase 27
                   ! [27: say ~On [the domain] you ~]
-                  say__p=1;ParaContent();  print (PrintText) SC_43; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_42;  .L_Say31; .L_SayX31;
+                  say__p=1;ParaContent();  print (PrintText) SC_46; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_45;  .L_Say33; .L_SayX33;
                   ! phrase 28
                   ! [28: otherwise]
                   } else {
 
                   ! phrase 29
                   ! [29: say ~In [the domain] you ~]
-                  say__p=1;ParaContent();  print (PrintText) SC_41; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_42;  .L_Say32; .L_SayX32;
+                  say__p=1;ParaContent();  print (PrintText) SC_44; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_45;  .L_Say34; .L_SayX34;
                   ! phrase 30
                   ! [30: end if]
                   }
 
                ! phrase 31
                ! [31: say ~can [if the locale paragraph count is greater than 0]also [end if]see ~]
-               say__p=1;ParaContent();  print (PrintText) SC_44; 
-	if (~~(((((Global_Vars-->8) > 0))))) jump L_Say33;
-		ParaContent();  print (PrintText) SC_45; 
-	.L_Say33; .L_SayX33;
-		ParaContent();  print (PrintText) SC_46;  .L_Say34; .L_SayX34;
+               say__p=1;ParaContent();  print (PrintText) SC_47; 
+	if (~~(((((Global_Vars-->8) > 0))))) jump L_Say35;
+		ParaContent();  print (PrintText) SC_48; 
+	.L_Say35; .L_SayX35;
+		ParaContent();  print (PrintText) SC_49;  .L_Say36; .L_SayX36;
                ! phrase 32
                ! [32: let the common holder be nothing]
                 t_2 = nothing; 
@@ -12334,13 +12405,13 @@ self = noun;
 		give subst__v workflag2; else give subst__v ~workflag2;
 		WriteListOfMarkedObjects(ENGLISH_BIT+RECURSE_BIT+PARTINV_BIT+
 			TERSE_BIT+CONCEAL_BIT);
-		@pull subst__v;  .L_Say35; .L_SayX35;  }
+		@pull subst__v;  .L_Say37; .L_SayX37;  }
                ! phrase 44
                ! [44: if the domain is the location , say ~ here~]
-                if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_47;  .L_Say36; .L_SayX36;  }
+                if (((t_0 == real_location))) { say__p=1;ParaContent();  print (PrintText) SC_50;  .L_Say38; .L_SayX38;  }
                ! phrase 45
                ! [45: say ~.[paragraph break]~]
-               say__p=1;ParaContent();  print (PrintText) SC_48; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say37; .L_SayX37;
+               say__p=1;ParaContent();  print (PrintText) SC_51; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say39; .L_SayX39;
                ! phrase 46
                ! [46: unfilter list recursion]
                 list_filter_routine = 0; 
@@ -12519,7 +12590,7 @@ self = noun;
        if (((~~(((Adj_55_t1_v9(t_0)))))))  {
          ! phrase 2
          ! [2: if a paragraph break is pending , say ~[conditional paragraph break]~]
-          if (( (say__p) )) { say__p=1;ParaContent();  DivideParagraphPoint();  .L_Say38; .L_SayX38;  }
+          if (( (say__p) )) { say__p=1;ParaContent();  DivideParagraphPoint();  .L_Say40; .L_SayX40;  }
          ! phrase 3
          ! [3: carry out the writing a paragraph about activity with the item]
           CarryOutActivity(V6_writing_a_paragraph_about, t_0); 
@@ -12534,7 +12605,7 @@ self = noun;
              (Adj_55_t2_v9(t_0)); 
             ! phrase 7
             ! [7: say ~[command clarification break]~]
-            say__p=1;ParaContent();  CommandClarificationBreak();  .L_Say39; .L_SayX39;
+            say__p=1;ParaContent();  CommandClarificationBreak();  .L_Say41; .L_SayX41;
             ! phrase 8
             ! [8: end if]
             }
@@ -12572,10 +12643,10 @@ self = noun;
              (Global_Vars-->8) = (Global_Vars-->8) + 1; 
             ! phrase 4
             ! [4: say ~[initial appearance of the item]~]
-            say__p=1;ParaContent(); @push self;  print (PrintText) GProperty(9, self=t_0,initial); @pull self;  .L_Say40; .L_SayX40;
+            say__p=1;ParaContent(); @push self;  print (PrintText) GProperty(9, self=t_0,initial); @pull self;  .L_Say42; .L_SayX42;
             ! phrase 5
             ! [5: say ~[paragraph break]~]
-            say__p=1;ParaContent();  DivideParagraphPoint(); new_line;  .L_Say41; .L_SayX41;
+            say__p=1;ParaContent();  DivideParagraphPoint(); new_line;  .L_Say43; .L_SayX43;
             ! phrase 6
             ! [6: if a locale-supportable thing is on the item begin]
              if ((Prop_7(,t_0)))  {
@@ -12601,13 +12672,13 @@ self = noun;
 
                ! phrase 13
                ! [13: say ~On [the item] ~]
-               say__p=1;ParaContent();  print (PrintText) SC_43; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_27;  .L_Say42; .L_SayX42;
+               say__p=1;ParaContent();  print (PrintText) SC_46; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_28;  .L_Say44; .L_SayX44;
                ! phrase 14
                ! [14: list the contents of the item , as a sentence , including contents , giving brief inventory information , tersely , not listing concealed items , prefacing with is/are , listing marked items only]
                 WriteListFrom(child(t_0), 3800); 
                ! phrase 15
                ! [15: say ~.[paragraph break]~]
-               say__p=1;ParaContent();  print (PrintText) SC_48; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say43; .L_SayX43;
+               say__p=1;ParaContent();  print (PrintText) SC_51; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say45; .L_SayX45;
                ! phrase 16
                ! [16: end if]
                }
@@ -12675,13 +12746,13 @@ self = noun;
              (Global_Vars-->8) = (Global_Vars-->8) + 1; 
             ! phrase 11
             ! [11: say ~On [the item] ~]
-            say__p=1;ParaContent();  print (PrintText) SC_43; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_27;  .L_Say44; .L_SayX44;
+            say__p=1;ParaContent();  print (PrintText) SC_46; ParaContent();  print (the) t_0; ParaContent();  print (PrintText) SC_28;  .L_Say46; .L_SayX46;
             ! phrase 12
             ! [12: list the contents of the item , as a sentence , including contents , giving brief inventory information , tersely , not listing concealed items , prefacing with is/are , listing marked items only]
              WriteListFrom(child(t_0), 3800); 
             ! phrase 13
             ! [13: say ~.[paragraph break]~]
-            say__p=1;ParaContent();  print (PrintText) SC_48; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say45; .L_SayX45;
+            say__p=1;ParaContent();  print (PrintText) SC_51; ParaContent();  DivideParagraphPoint(); new_line;  .L_Say47; .L_SayX47;
             ! phrase 14
             ! [14: end if]
             }
@@ -12731,7 +12802,7 @@ self = noun;
        GL__M(##Inv,2,noun); 
       ! phrase 2
       ! [2: say ~:[line break]~]
-      say__p=1;ParaContent();  print (PrintText) SC_49; ParaContent();  new_line;  .L_Say46; .L_SayX46;
+      say__p=1;ParaContent();  print (PrintText) SC_52; ParaContent();  new_line;  .L_Say48; .L_SayX48;
       ! phrase 3
       ! [3: list the contents of the player , with newlines , indented , including contents , giving inventory information , with extra indentation]
        WriteListFrom(child(player), 8215); 
@@ -14327,7 +14398,7 @@ self = noun;
           if (((~~(((MStack-->MstVO(20007,3)) == nothing)))))  {
             ! phrase 49
             ! [49: say ~ ~]
-            say__p=1;ParaContent();  print (PrintText) SC_27;  .L_Say47; .L_SayX47;
+            say__p=1;ParaContent();  print (PrintText) SC_28;  .L_Say49; .L_SayX49;
             ! phrase 50
             ! [50: if the vehicle gone by is a supporter , issue actor-based library message going action number 20 for the vehicle gone by]
              if ((((MStack-->MstVO(20007,3)) ofclass K6_supporter))) {  AGL__M(##Go,20,(MStack-->MstVO(20007,3)));   }
@@ -14382,7 +14453,7 @@ self = noun;
              AGL__M(##Go,26,noun); 
             ! phrase 66
             ! [66: say ~.~]
-            say__p=1;ParaContent();  print (PrintText) SC_48;  new_line; .L_Say48; .L_SayX48;
+            say__p=1;ParaContent();  print (PrintText) SC_51;  new_line; .L_Say50; .L_SayX50;
             ! phrase 67
             ! [67: try looking]
              TryAction(0, player, ##Look, 0, 0);; 
@@ -14395,7 +14466,7 @@ self = noun;
 
          ! phrase 70
          ! [70: say ~.~]
-         say__p=1;ParaContent();  print (PrintText) SC_48;  new_line; .L_Say49; .L_SayX49;
+         say__p=1;ParaContent();  print (PrintText) SC_51;  new_line; .L_Say51; .L_SayX51;
          ! phrase 71
          ! [71: end if]
          }
@@ -14982,7 +15053,7 @@ self = noun;
    if (debug_rules) DB_Rule(R_172, 172);
       ! phrase 1
       ! [1: say bold type]
-      say__p=1;ParaContent();  style bold;  .L_Say50; .L_SayX50;
+      say__p=1;ParaContent();  style bold;  .L_Say52; .L_SayX52;
       ! phrase 2
       ! [2: if the visibility level count is 0 begin]
        if ((((MStack-->MstVO(20011,2)) == 0)))  {
@@ -15000,21 +15071,21 @@ self = noun;
           } else if ((((MStack-->MstVO(20011,3)) == real_location))) { 
          ! phrase 7
          ! [7: say ~[visibility ceiling]~]
-         say__p=1;ParaContent();  print (PrintShortName) (MStack-->MstVO(20011,3));  .L_Say51; .L_SayX51;
+         say__p=1;ParaContent();  print (PrintShortName) (MStack-->MstVO(20011,3));  .L_Say53; .L_SayX53;
          ! phrase 8
          ! [8: otherwise]
          } else {
 
          ! phrase 9
          ! [9: say ~[The visibility ceiling]~]
-         say__p=1;ParaContent();  print (The) (MStack-->MstVO(20011,3));  .L_Say52; .L_SayX52;
+         say__p=1;ParaContent();  print (The) (MStack-->MstVO(20011,3));  .L_Say54; .L_SayX54;
          ! phrase 10
          ! [10: end if]
          }
 
       ! phrase 11
       ! [11: say roman type]
-      say__p=1;ParaContent();  style roman;  .L_Say53; .L_SayX53;
+      say__p=1;ParaContent();  style roman;  .L_Say55; .L_SayX55;
       ! phrase 12
       ! [12: let intermediate level be the visibility-holder of the actor]
        t_0 =  VisibilityParent(actor) ; 
@@ -15033,10 +15104,10 @@ self = noun;
 
       ! phrase 17
       ! [17: say line break]
-      say__p=1;ParaContent();  new_line;  .L_Say54; .L_SayX54;
+      say__p=1;ParaContent();  new_line;  .L_Say56; .L_SayX56;
       ! phrase 18
       ! [18: say run paragraph on with special look spacing]
-      say__p=1;ParaContent();  SpecialLookSpacingBreak();  .L_Say55; .L_SayX55;
+      say__p=1;ParaContent();  SpecialLookSpacingBreak();  .L_Say57; .L_SayX57;
    } ! Runs only when actor is the player
    else if (debug_rules > 1) DB_Rule(R_172, 172, true);
    rfalse;
@@ -15242,7 +15313,7 @@ self = noun;
        if ((((WhetherProvides(noun, false, description)))) && (((~~((GProperty(OBJECT_TY, noun,description) == EMPTY_TEXT_VALUE))))))  {
          ! phrase 2
          ! [2: say ~[the description of the noun][line break]~]
-         say__p=1;ParaContent(); @push self;  print (PrintText) GProperty(OBJECT_TY, self=noun,description); @pull self; ParaContent();  new_line;  .L_Say56; .L_SayX56;
+         say__p=1;ParaContent(); @push self;  print (PrintText) GProperty(OBJECT_TY, self=noun,description); @pull self; ParaContent();  new_line;  .L_Say58; .L_SayX58;
          ! phrase 3
          ! [3: now examine text printed is true]
           (MStack-->MstVO(20012,0)) = 1; 
@@ -17913,7 +17984,7 @@ self = noun;
        the_time = the_time + 20; 
       ! phrase 2
       ! [2: say ~You rest for 20 minutes. The time of day is now [time of day]. [line break] [line break] The strange voice exclaims, 'Ah, so you've decided to take my advice...heheheh. But perhaps you should continue on your way? That illness of yours isn't waiting on you to kill you...or is it?'~]
-      say__p=1;ParaContent();  print (PrintText) SC_50; ParaContent();  print (PrintTimeOfDay) the_time; ParaContent();  print (PrintText) SC_51; ParaContent();  new_line; ParaContent();  print (PrintText) SC_27; ParaContent();  new_line; ParaContent();  print (PrintText) SC_52;  new_line; .L_Say57; .L_SayX57;
+      say__p=1;ParaContent();  print (PrintText) SC_53; ParaContent();  print (PrintTimeOfDay) the_time; ParaContent();  print (PrintText) SC_54; ParaContent();  new_line; ParaContent();  print (PrintText) SC_28; ParaContent();  new_line; ParaContent();  print (PrintText) SC_55;  new_line; .L_Say59; .L_SayX59;
    } ! Runs only when actor is the player
    else if (debug_rules > 1) DB_Rule(R_740, 740, true);
    rfalse;
@@ -19830,7 +19901,7 @@ Constant B5_when_play_begins = EMPTY_RULEBOOK;
 Constant B6_when_play_ends = EMPTY_RULEBOOK;
 Array B7_when_scene_begins --> R_57 NULL; ! 1 rule(s)
 Constant B8_when_scene_ends = EMPTY_RULEBOOK;
-Array B9_every_turn --> R_741 R_742 R_743 R_744 NULL; ! 4 rule(s)
+Array B9_every_turn --> R_741 R_742 R_743 R_744 R_745 NULL; ! 5 rule(s)
 Array B10_action_processing --> R_20 R_19 R_21 BASIC_VISIBILITY_R BASIC_ACCESSIBILITY_R CARRYING_REQUIREMENTS_R R_22 REQUESTED_ACTIONS_REQUIRE_R CARRY_OUT_REQUESTED_ACTIONS_R DESCEND_TO_SPECIFIC_ACTION_R R_23 NULL; ! 11 rule(s)
 Array B11_setting_action_variables --> R_137 R_171 R_159 NULL; ! 3 rule(s)
 Array B12_specific_action_processi --> WORK_OUT_DETAILS_OF_SPECIFIC_R R_24 R_25 R_26 R_27 R_28 R_29 R_30 NULL; ! 8 rule(s)
@@ -20455,28 +20526,28 @@ Constant BR_261 = R_296;
 Constant BR_262 = R_297;
 Constant BR_263 = R_298;
 Constant BR_264 = R_299;
-Constant BR_699 = R_8;
-Constant BR_705 = R_9;
-Constant BR_706 = R_10;
-Constant BR_707 = R_11;
-Constant BR_708 = R_12;
-Constant BR_716 = R_16;
-Constant BR_717 = R_17;
-Constant BR_719 = R_18;
-Constant BR_722 = R_21;
-Constant BR_723 = R_19;
-Constant BR_724 = R_20;
-Constant BR_728 = R_22;
-Constant BR_732 = R_23;
-Constant BR_738 = R_35;
-Constant BR_740 = R_59;
-Constant BR_741 = R_60;
-Constant BR_743 = R_61;
-Constant BR_748 = R_69;
-Constant BR_749 = R_68;
-Constant BR_751 = R_70;
-Constant BR_752 = R_91;
-Constant BR_753 = R_148;
+Constant BR_700 = R_8;
+Constant BR_706 = R_9;
+Constant BR_707 = R_10;
+Constant BR_708 = R_11;
+Constant BR_709 = R_12;
+Constant BR_717 = R_16;
+Constant BR_718 = R_17;
+Constant BR_720 = R_18;
+Constant BR_723 = R_21;
+Constant BR_724 = R_19;
+Constant BR_725 = R_20;
+Constant BR_729 = R_22;
+Constant BR_733 = R_23;
+Constant BR_739 = R_35;
+Constant BR_741 = R_59;
+Constant BR_742 = R_60;
+Constant BR_744 = R_61;
+Constant BR_749 = R_69;
+Constant BR_750 = R_68;
+Constant BR_752 = R_70;
+Constant BR_753 = R_91;
+Constant BR_754 = R_148;
 
 
 
@@ -22711,8 +22782,8 @@ Constant SLOW_ROUTE_FINDING;
 #endif;
 #endif;
 
-Constant NUM_DOORS = 10;
-Constant NUM_ROOMS = 12;
+Constant NUM_DOORS = 11;
+Constant NUM_ROOMS = 11;
 
 Array DoorRoutingViable -> NUM_DOORS+1;
 
@@ -24384,81 +24455,82 @@ Array RulebookNames -->
 		if (R == R_742) { print "Every turn"; return; } ! 696, case 2
 		if (R == R_743) { print "Every turn"; return; } ! 697, case 2
 		if (R == R_744) { print "Every turn"; return; } ! 698, case 2
-		if (R == R_8) { print "start in the correct scenes rule"; return; } ! 699, case 1
-		if (R == POSITION_PLAYER_IN_MODEL_R) { print "position player in model world rule"; return; } ! 700, case 1
-		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 701, case 1
-		if (R == SEED_RANDOM_NUMBER_GENERATOR_R) { print "seed random number generator rule"; return; } ! 702, case 1
-		if (R == VIRTUAL_MACHINE_STARTUP_R) { print "virtual machine startup rule"; return; } ! 703, case 1
-		if (R == INITIALISE_MEMORY_R) { print "initialise memory rule"; return; } ! 704, case 1
-		if (R == R_9) { print "when play begins stage rule"; return; } ! 705, case 1
-		if (R == R_10) { print "fix baseline scoring rule"; return; } ! 706, case 1
-		if (R == R_11) { print "display banner rule"; return; } ! 707, case 1
-		if (R == R_12) { print "initial room description rule"; return; } ! 708, case 1
-		if (R == GENERATE_ACTION_R) { print "generate action rule"; return; } ! 709, case 1
-		if (R == PARSE_COMMAND_R) { print "parse command rule"; return; } ! 710, case 1
-		if (R == TIMED_EVENTS_R) { print "timed events rule"; return; } ! 711, case 1
-		if (R == ADVANCE_TIME_R) { print "advance time rule"; return; } ! 712, case 1
-		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 713, case 1
-		if (R == ADJUST_LIGHT_R) { print "adjust light rule"; return; } ! 714, case 1
-		if (R == NOTE_OBJECT_ACQUISITIONS_R) { print "note object acquisitions rule"; return; } ! 715, case 1
-		if (R == R_16) { print "notify score changes rule"; return; } ! 716, case 1
-		if (R == R_17) { print "when play ends stage rule"; return; } ! 717, case 1
-		if (R == RESURRECT_PLAYER_IF_ASKED_R) { print "resurrect player if asked rule"; return; } ! 718, case 1
-		if (R == R_18) { print "print player's obituary rule"; return; } ! 719, case 1
-		if (R == ASK_FINAL_QUESTION_R) { print "ask the final question rule"; return; } ! 720, case 1
-		if (R == DetectSceneChange) { print "scene change machinery rule"; return; } ! 721, case 1
-		if (R == R_21) { print "before stage rule"; return; } ! 722, case 1
-		if (R == R_19) { print "set pronouns from items from multiple object lists rule"; return; } ! 723, case 1
-		if (R == R_20) { print "announce items from multiple object lists rule"; return; } ! 724, case 1
-		if (R == BASIC_VISIBILITY_R) { print "basic visibility rule"; return; } ! 725, case 1
-		if (R == BASIC_ACCESSIBILITY_R) { print "basic accessibility rule"; return; } ! 726, case 1
-		if (R == CARRYING_REQUIREMENTS_R) { print "carrying requirements rule"; return; } ! 727, case 1
-		if (R == R_22) { print "instead stage rule"; return; } ! 728, case 1
-		if (R == REQUESTED_ACTIONS_REQUIRE_R) { print "requested actions require persuasion rule"; return; } ! 729, case 1
-		if (R == CARRY_OUT_REQUESTED_ACTIONS_R) { print "carry out requested actions rule"; return; } ! 730, case 1
-		if (R == DESCEND_TO_SPECIFIC_ACTION_R) { print "descend to specific action-processing rule"; return; } ! 731, case 1
-		if (R == R_23) { print "end action-processing in success rule"; return; } ! 732, case 1
-		if (R == WORK_OUT_DETAILS_OF_SPECIFIC_R) { print "work out details of specific action rule"; return; } ! 733, case 1
-		if (R == ACCESS_THROUGH_BARRIERS_R) { print "access through barriers rule"; return; } ! 734, case 1
-		if (R == CANT_REACH_INSIDE_ROOMS_R) { print "can't reach inside rooms rule"; return; } ! 735, case 1
-		if (R == CANT_REACH_INSIDE_CLOSED_R) { print "can't reach inside closed containers rule"; return; } ! 736, case 1
-		if (R == CANT_REACH_OUTSIDE_CLOSED_R) { print "can't reach outside closed containers rule"; return; } ! 737, case 1
-		if (R == R_35) { print "can't act in the dark rule"; return; } ! 738, case 1
-		if (R == STANDARD_NAME_PRINTING_R) { print "standard name printing rule"; return; } ! 739, case 1
-		if (R == R_59) { print "standard printing the plural name rule"; return; } ! 740, case 1
-		if (R == R_60) { print "standard printing a number of something rule"; return; } ! 741, case 1
-		if (R == STANDARD_CONTENTS_LISTING_R) { print "standard contents listing rule"; return; } ! 742, case 1
-		if (R == R_61) { print "look around once light available rule"; return; } ! 743, case 1
-		if (R == ENABLE_GLULX_ACCEL_R) { print "enable Glulx acceleration rule"; return; } ! 744, case 1
-		if (R == PRINT_OBITUARY_HEADLINE_R) { print "print obituary headline rule"; return; } ! 745, case 1
-		if (R == PRINT_FINAL_SCORE_R) { print "print final score rule"; return; } ! 746, case 1
-		if (R == DISPLAY_FINAL_STATUS_LINE_R) { print "display final status line rule"; return; } ! 747, case 1
-		if (R == R_69) { print "print the final question rule"; return; } ! 748, case 1
-		if (R == R_68) { print "print the final prompt rule"; return; } ! 749, case 1
-		if (R == READ_FINAL_ANSWER_R) { print "read the final answer rule"; return; } ! 750, case 1
-		if (R == R_70) { print "standard respond to final question rule"; return; } ! 751, case 1
-		if (R == R_91) { print "can't take component parts rule"; return; } ! 752, case 1
-		if (R == R_148) { print "find what to enter rule"; return; } ! 753, case 1
-		if (R == QUIT_THE_GAME_R) { print "quit the game rule"; return; } ! 754, case 1
-		if (R == SAVE_THE_GAME_R) { print "save the game rule"; return; } ! 755, case 1
-		if (R == RESTORE_THE_GAME_R) { print "restore the game rule"; return; } ! 756, case 1
-		if (R == RESTART_THE_GAME_R) { print "restart the game rule"; return; } ! 757, case 1
-		if (R == VERIFY_THE_STORY_FILE_R) { print "verify the story file rule"; return; } ! 758, case 1
-		if (R == SWITCH_TRANSCRIPT_ON_R) { print "switch the story transcript on rule"; return; } ! 759, case 1
-		if (R == SWITCH_TRANSCRIPT_OFF_R) { print "switch the story transcript off rule"; return; } ! 760, case 1
-		if (R == ANNOUNCE_STORY_FILE_VERSION_R) { print "announce the story file version rule"; return; } ! 761, case 1
-		if (R == ANNOUNCE_SCORE_R) { print "announce the score rule"; return; } ! 762, case 1
-		if (R == PREFER_ABBREVIATED_R) { print "prefer abbreviated room descriptions rule"; return; } ! 763, case 1
-		if (R == REP_PREFER_ABBREVIATED_R) { print "standard report preferring abbreviated room descriptions rule"; return; } ! 764, case 1
-		if (R == PREFER_UNABBREVIATED_R) { print "prefer unabbreviated room descriptions rule"; return; } ! 765, case 1
-		if (R == REP_PREFER_UNABBREVIATED_R) { print "standard report preferring unabbreviated room descriptions rule"; return; } ! 766, case 1
-		if (R == PREFER_SOMETIMES_ABBREVIATED_R) { print "prefer sometimes abbreviated room descriptions rule"; return; } ! 767, case 1
-		if (R == REP_PREFER_SOMETIMES_ABBR_R) { print "standard report preferring sometimes abbreviated room descriptions rule"; return; } ! 768, case 1
-		if (R == SWITCH_SCORE_NOTIFY_ON_R) { print "switch score notification on rule"; return; } ! 769, case 1
-		if (R == REP_SWITCH_NOTIFY_ON_R) { print "standard report switching score notification on rule"; return; } ! 770, case 1
-		if (R == SWITCH_SCORE_NOTIFY_OFF_R) { print "switch score notification off rule"; return; } ! 771, case 1
-		if (R == REP_SWITCH_NOTIFY_OFF_R) { print "standard report switching score notification off rule"; return; } ! 772, case 1
-		if (R == ANNOUNCE_PRONOUN_MEANINGS_R) { print "announce the pronoun meanings rule"; return; } ! 773, case 1
+		if (R == R_745) { print "Every turn"; return; } ! 699, case 2
+		if (R == R_8) { print "start in the correct scenes rule"; return; } ! 700, case 1
+		if (R == POSITION_PLAYER_IN_MODEL_R) { print "position player in model world rule"; return; } ! 701, case 1
+		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 702, case 1
+		if (R == SEED_RANDOM_NUMBER_GENERATOR_R) { print "seed random number generator rule"; return; } ! 703, case 1
+		if (R == VIRTUAL_MACHINE_STARTUP_R) { print "virtual machine startup rule"; return; } ! 704, case 1
+		if (R == INITIALISE_MEMORY_R) { print "initialise memory rule"; return; } ! 705, case 1
+		if (R == R_9) { print "when play begins stage rule"; return; } ! 706, case 1
+		if (R == R_10) { print "fix baseline scoring rule"; return; } ! 707, case 1
+		if (R == R_11) { print "display banner rule"; return; } ! 708, case 1
+		if (R == R_12) { print "initial room description rule"; return; } ! 709, case 1
+		if (R == GENERATE_ACTION_R) { print "generate action rule"; return; } ! 710, case 1
+		if (R == PARSE_COMMAND_R) { print "parse command rule"; return; } ! 711, case 1
+		if (R == TIMED_EVENTS_R) { print "timed events rule"; return; } ! 712, case 1
+		if (R == ADVANCE_TIME_R) { print "advance time rule"; return; } ! 713, case 1
+		if (R == UPDATE_CHRONOLOGICAL_RECORDS_R) { print "update chronological records rule"; return; } ! 714, case 1
+		if (R == ADJUST_LIGHT_R) { print "adjust light rule"; return; } ! 715, case 1
+		if (R == NOTE_OBJECT_ACQUISITIONS_R) { print "note object acquisitions rule"; return; } ! 716, case 1
+		if (R == R_16) { print "notify score changes rule"; return; } ! 717, case 1
+		if (R == R_17) { print "when play ends stage rule"; return; } ! 718, case 1
+		if (R == RESURRECT_PLAYER_IF_ASKED_R) { print "resurrect player if asked rule"; return; } ! 719, case 1
+		if (R == R_18) { print "print player's obituary rule"; return; } ! 720, case 1
+		if (R == ASK_FINAL_QUESTION_R) { print "ask the final question rule"; return; } ! 721, case 1
+		if (R == DetectSceneChange) { print "scene change machinery rule"; return; } ! 722, case 1
+		if (R == R_21) { print "before stage rule"; return; } ! 723, case 1
+		if (R == R_19) { print "set pronouns from items from multiple object lists rule"; return; } ! 724, case 1
+		if (R == R_20) { print "announce items from multiple object lists rule"; return; } ! 725, case 1
+		if (R == BASIC_VISIBILITY_R) { print "basic visibility rule"; return; } ! 726, case 1
+		if (R == BASIC_ACCESSIBILITY_R) { print "basic accessibility rule"; return; } ! 727, case 1
+		if (R == CARRYING_REQUIREMENTS_R) { print "carrying requirements rule"; return; } ! 728, case 1
+		if (R == R_22) { print "instead stage rule"; return; } ! 729, case 1
+		if (R == REQUESTED_ACTIONS_REQUIRE_R) { print "requested actions require persuasion rule"; return; } ! 730, case 1
+		if (R == CARRY_OUT_REQUESTED_ACTIONS_R) { print "carry out requested actions rule"; return; } ! 731, case 1
+		if (R == DESCEND_TO_SPECIFIC_ACTION_R) { print "descend to specific action-processing rule"; return; } ! 732, case 1
+		if (R == R_23) { print "end action-processing in success rule"; return; } ! 733, case 1
+		if (R == WORK_OUT_DETAILS_OF_SPECIFIC_R) { print "work out details of specific action rule"; return; } ! 734, case 1
+		if (R == ACCESS_THROUGH_BARRIERS_R) { print "access through barriers rule"; return; } ! 735, case 1
+		if (R == CANT_REACH_INSIDE_ROOMS_R) { print "can't reach inside rooms rule"; return; } ! 736, case 1
+		if (R == CANT_REACH_INSIDE_CLOSED_R) { print "can't reach inside closed containers rule"; return; } ! 737, case 1
+		if (R == CANT_REACH_OUTSIDE_CLOSED_R) { print "can't reach outside closed containers rule"; return; } ! 738, case 1
+		if (R == R_35) { print "can't act in the dark rule"; return; } ! 739, case 1
+		if (R == STANDARD_NAME_PRINTING_R) { print "standard name printing rule"; return; } ! 740, case 1
+		if (R == R_59) { print "standard printing the plural name rule"; return; } ! 741, case 1
+		if (R == R_60) { print "standard printing a number of something rule"; return; } ! 742, case 1
+		if (R == STANDARD_CONTENTS_LISTING_R) { print "standard contents listing rule"; return; } ! 743, case 1
+		if (R == R_61) { print "look around once light available rule"; return; } ! 744, case 1
+		if (R == ENABLE_GLULX_ACCEL_R) { print "enable Glulx acceleration rule"; return; } ! 745, case 1
+		if (R == PRINT_OBITUARY_HEADLINE_R) { print "print obituary headline rule"; return; } ! 746, case 1
+		if (R == PRINT_FINAL_SCORE_R) { print "print final score rule"; return; } ! 747, case 1
+		if (R == DISPLAY_FINAL_STATUS_LINE_R) { print "display final status line rule"; return; } ! 748, case 1
+		if (R == R_69) { print "print the final question rule"; return; } ! 749, case 1
+		if (R == R_68) { print "print the final prompt rule"; return; } ! 750, case 1
+		if (R == READ_FINAL_ANSWER_R) { print "read the final answer rule"; return; } ! 751, case 1
+		if (R == R_70) { print "standard respond to final question rule"; return; } ! 752, case 1
+		if (R == R_91) { print "can't take component parts rule"; return; } ! 753, case 1
+		if (R == R_148) { print "find what to enter rule"; return; } ! 754, case 1
+		if (R == QUIT_THE_GAME_R) { print "quit the game rule"; return; } ! 755, case 1
+		if (R == SAVE_THE_GAME_R) { print "save the game rule"; return; } ! 756, case 1
+		if (R == RESTORE_THE_GAME_R) { print "restore the game rule"; return; } ! 757, case 1
+		if (R == RESTART_THE_GAME_R) { print "restart the game rule"; return; } ! 758, case 1
+		if (R == VERIFY_THE_STORY_FILE_R) { print "verify the story file rule"; return; } ! 759, case 1
+		if (R == SWITCH_TRANSCRIPT_ON_R) { print "switch the story transcript on rule"; return; } ! 760, case 1
+		if (R == SWITCH_TRANSCRIPT_OFF_R) { print "switch the story transcript off rule"; return; } ! 761, case 1
+		if (R == ANNOUNCE_STORY_FILE_VERSION_R) { print "announce the story file version rule"; return; } ! 762, case 1
+		if (R == ANNOUNCE_SCORE_R) { print "announce the score rule"; return; } ! 763, case 1
+		if (R == PREFER_ABBREVIATED_R) { print "prefer abbreviated room descriptions rule"; return; } ! 764, case 1
+		if (R == REP_PREFER_ABBREVIATED_R) { print "standard report preferring abbreviated room descriptions rule"; return; } ! 765, case 1
+		if (R == PREFER_UNABBREVIATED_R) { print "prefer unabbreviated room descriptions rule"; return; } ! 766, case 1
+		if (R == REP_PREFER_UNABBREVIATED_R) { print "standard report preferring unabbreviated room descriptions rule"; return; } ! 767, case 1
+		if (R == PREFER_SOMETIMES_ABBREVIATED_R) { print "prefer sometimes abbreviated room descriptions rule"; return; } ! 768, case 1
+		if (R == REP_PREFER_SOMETIMES_ABBR_R) { print "standard report preferring sometimes abbreviated room descriptions rule"; return; } ! 769, case 1
+		if (R == SWITCH_SCORE_NOTIFY_ON_R) { print "switch score notification on rule"; return; } ! 770, case 1
+		if (R == REP_SWITCH_NOTIFY_ON_R) { print "standard report switching score notification on rule"; return; } ! 771, case 1
+		if (R == SWITCH_SCORE_NOTIFY_OFF_R) { print "switch score notification off rule"; return; } ! 772, case 1
+		if (R == REP_SWITCH_NOTIFY_OFF_R) { print "standard report switching score notification off rule"; return; } ! 773, case 1
+		if (R == ANNOUNCE_PRONOUN_MEANINGS_R) { print "announce the pronoun meanings rule"; return; } ! 774, case 1
 
 		print "(nameless rule at address ", R, ")";
 	}
@@ -28355,55 +28427,58 @@ ArgumentTypeFailed(filename, line);
 Array ConstantListPointers --> 
  0 0;
 
-Constant SC_27 = " ";
-Constant SC_21 = " Mindasa recites, in such monotony that she could be mistaken for an android, ~There is a zero percent chance that you'll want to follow me if your intention is to pass through to what will be the wrong room. But then again, I have been known to lie one hundred percent of the time.~ Mindasa then turns her back towards you and walks towards the blue door to the north. She opens it, walks through, and closes it behind her.";
-Constant SC_28 = " Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.";
-Constant SC_52 = " The strange voice exclaims, ~Ah, so you've decided to take my advice...heheheh. But perhaps you should continue on your way? That illness of yours isn't waiting on you to kill you...or is it?~";
-Constant SC_22 = " Wendy recites, in an identical tone and voice, ~Mindasa is correct, and I will lead you to the right room room. One of these two things I just said is a lie, but this following statement is absolutely true: there is only one correct room.~ Wendy then turns her back towards you and walks towards the green door to the east. She opens it, walks through, and closes it behind her.";
-Constant SC_47 = " here";
-Constant SC_37 = " or ";
-Constant SC_42 = " you ";
-Constant SC_38 = ", ";
-Constant SC_36 = ",";
-Constant SC_51 = ". ";
-Constant SC_48 = ".";
-Constant SC_33 = ": ";
-Constant SC_49 = ":";
-Constant SC_39 = "> ";
+Constant SC_28 = " ";
+Constant SC_22 = " Mindasa recites, in such monotony that she could be mistaken for an android, ~There is a zero percent chance that you'll want to follow me if your intention is to pass through to what will be the wrong room. But then again, I have been known to lie one hundred percent of the time.~ Mindasa then turns her back towards you and walks towards the blue door to the north. She opens it, walks through, and closes it behind her.";
+Constant SC_29 = " Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.";
+Constant SC_55 = " The strange voice exclaims, ~Ah, so you've decided to take my advice...heheheh. But perhaps you should continue on your way? That illness of yours isn't waiting on you to kill you...or is it?~";
+Constant SC_23 = " Wendy recites, in an identical tone and voice, ~Mindasa is correct, and I will lead you to the right room room. One of these two things I just said is a lie, but this following statement is absolutely true: there is only one correct room.~ Wendy then turns her back towards you and walks towards the green door to the east. She opens it, walks through, and closes it behind her.";
+Constant SC_50 = " here";
+Constant SC_40 = " or ";
+Constant SC_45 = " you ";
+Constant SC_41 = ", ";
+Constant SC_39 = ",";
+Constant SC_54 = ". ";
+Constant SC_51 = ".";
+Constant SC_36 = ": ";
+Constant SC_52 = ":";
+Constant SC_42 = "> ";
 Constant SC_6 = ">";
-Constant SC_35 = "?";
-Constant SC_19 = "A man stands in the center of the room in a white button-down, khaki pants, and a large name tag with the name written, ~Kinder Gardener~. He says as you approach him, ~I really wish you wouldn't try this door, but if you insist, two plus two must equal...~. There are five closed boxes in front of him, each with a button on the top that opens it.";
-Constant SC_13 = "A stinging pain hits your throat, and you begin to cough violently.";
+Constant SC_38 = "?";
+Constant SC_20 = "A man stands in the center of the room in a white button-down, khaki pants, and a large name tag with the name written, ~Kinder Gardener~. He says as you approach him, ~I really wish you wouldn't try this door, but if you insist, two plus two must equal...~. There are five closed boxes in front of him, each with a button on the top that opens it.";
+Constant SC_14 = "A stinging pain hits your throat, and you begin to cough violently.";
 Constant SC_4 = "As good-looking as ever.";
-Constant SC_30 = "As you desperately TURN BACK and as the walls instruct, you jolt right back to where you last left off, the Room of Despair. But something is different; the bed has disappeared, and you notice that the Silver Staircase is no longer locked.";
-Constant SC_26 = "As you enter the room, labeled by the White Door as the ~Nightmare Room,~ the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...~KCABNRUT~ is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words ~KCABNRUT~ inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. ";
-Constant SC_29 = "As you jolt to the other end of the room and open the door there, you find no solace at the other end of the bloody door. A room so heavily concentrated in that same noxious gas you had just experienced awaits at the other end: the Dead Room. In small concentrations, it's a powerful hallucinogen. In higher concentrations, it drives the mind so mad to the point where the brain shuts down almost immediately. You collapse, dying instantly. The strange voice says, ~If only he had been better at following instructions. Perhaps the next test subject can do better.~";
-Constant SC_17 = "As you open the crate, the strange voice says, ~I am truly disappointed in you. Perhaps the next test subject can do better.~ Inside the box is a small bomb with a clown face labeled on it. It detonates as soon as the strange voice stops. You die instantly.";
-Constant SC_41 = "In ";
+Constant SC_31 = "As you desperately TURN BACK and as the walls instruct, you jolt right back to where you last left off, the Room of Despair. But something is different; the bed has disappeared, and you notice that the Silver Staircase is no longer locked.";
+Constant SC_27 = "As you enter the room, labeled by the White Door as the ~Nightmare Room,~ the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...~KCABNRUT~ is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words ~KCABNRUT~ inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. ";
+Constant SC_35 = "As you enter this mysterious final room, you see a man of great bulk in a black suit standing in the center of the room. He wears a big smile, and in both hands he holds two peculiar documents. ~Congratulations, young lad! Here's your diploma! Now walk out the exit behind me so you can get out there and tackle the real world!~ Enraged that you just realized that this was meant to be a sadistic way of teaching you about thinking outside the box and following specific instructions no matter how peculiar they seem, yet powerless to do anything because you realize that you have no real sway over what just happened, you resign yourself and trudge out the back door. Congratulations, you just passed some arbitrary tests to prove your worth to a bunch of people who didn't care about you in the long run! Are you happy with yourself?";
+Constant SC_30 = "As you jolt to the other end of the room and open the door there, you find no solace at the other end of the bloody door. A room so heavily concentrated in that same noxious gas you had just experienced awaits at the other end: the Dead Room. In small concentrations, it's a powerful hallucinogen. In higher concentrations, it drives the mind so mad to the point where the brain shuts down almost immediately. You collapse, dying instantly. The strange voice says, ~If only he had been better at following instructions. Perhaps the next test subject can do better.~";
+Constant SC_18 = "As you open the crate, the strange voice says, ~I am truly disappointed in you. Perhaps the next test subject can do better.~ Inside the box is a small bomb with a clown face labeled on it. It detonates as soon as the strange voice stops. You die instantly.";
+Constant SC_44 = "In ";
 Constant SC_2 = "Louis Ades";
-Constant SC_23 = "Mindasa says, in an almost gleeful tone, ~Oh! I'm sorry! It seems you guessed...wrong...~ Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, ~But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!~ You awaken moments later, back in your previous condition, in the Testing Chamber.";
-Constant SC_43 = "On ";
-Constant SC_18 = "Once in the First Riddle Room, the strange voice says, ~Oh, I'm not sure if I'd like you to take on this challenge--you may hurt yourself, after all. But if you insist, you must know that each room contains a riddle that you'll need to solve. Solve it, and the door connecting to the next room will unlock. It's very possible that there is an end to this maze after, possibly, the seventh room. Will it lead you to safety? It looks like you'll have to find that out yourself. If it were up to me, I wish you'd just sit down...and rest...but regardless, try not to hurt yourself, heheheh.~ The loudspeaker cuts out.";
+Constant SC_24 = "Mindasa says, in an almost gleeful tone, ~Oh! I'm sorry! It seems you guessed...wrong...~ Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, ~But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!~ You awaken moments later, back in your previous condition, in the Testing Chamber. Deja vu ensues as the voice on the loudspeaker repeats itself, yet you feel just as sick as before:";
+Constant SC_46 = "On ";
+Constant SC_13 = "Once again, the gas hasn't felt that impacting to your health, but your previous symptoms get stronger, and you start to sweat uncontrollably as hyperthermia takes over.";
+Constant SC_19 = "Once in the First Riddle Room, the strange voice says, ~Oh, I'm not sure if I'd like you to take on this challenge--you may hurt yourself, after all. But if you insist, you must know that each room contains a riddle that you'll need to solve. Solve it, and the door connecting to the next room will unlock. It's very possible that there is an end to this maze after, possibly, the seventh room. Will it lead you to safety? It looks like you'll have to find that out yourself. If it were up to me, I wish you'd just sit down...and rest...but regardless, try not to hurt yourself, heheheh.~ The loudspeaker cuts out.";
 Constant SC_10 = "QUIT";
 Constant SC_7 = "RESTART";
 Constant SC_8 = "RESTORE a saved game";
-Constant SC_16 = "The pain is too much for you to handle. The poison has stretched to every part of your body, and you collapse to the ground. The voice in the loudspeakers says, calmly, ~Ah, that's a shame. I was really rooting for him. Oh well, onto the next test subject.~";
-Constant SC_20 = "Two women stand side by side in the next room. To the north is a blue door, to the east is a green door, and to the south is a red door (the door you entered through is to the west). Both are dressed identically, in black button-down blouses, white sports jackets and white pants. The woman on the left has blond hair and wears a name tag that says, ~Mindasa~. The woman on the right has brown hair and wears a name tag that says, ~Wendy.~ Other than these differences, both are nearly identical in every way. Both women say, perfectly in unison, ~Welcome to the second room! We're so ecstatic you made it through the first riddle! It was designed for kindergarteners, so we wouldn't expect any less from you! And don't worry, this one won't be nearly as deadly if you fail. Simply FOLLOW OUR INSTRUCTIONS EXACTLY to find out which door to enter through, and you will make it to the next room in this wondrous maze!~";
+Constant SC_17 = "The pain is too much for you to handle. The poison has stretched to every part of your body, and you collapse to the ground. The voice in the loudspeakers says, calmly, ~Ah, that's a shame. I was really rooting for him. Oh well, onto the next test subject.~";
+Constant SC_21 = "Two women stand side by side in the next room. To the north is a blue door, to the east is a green door, and to the south is a red door (the door you entered through is to the west). Both are dressed identically, in black button-down blouses, white sports jackets and white pants. The woman on the left has blond hair and wears a name tag that says, ~Mindasa~. The woman on the right has brown hair and wears a name tag that says, ~Wendy.~ Other than these differences, both are nearly identical in every way. Both women say, perfectly in unison, ~Welcome to the second room! We're so ecstatic you made it through the first riddle! It was designed for kindergarteners, so we wouldn't expect any less from you! And don't worry, this one won't be nearly as deadly if you fail. Simply FOLLOW OUR INSTRUCTIONS EXACTLY to find out which door to enter through, and you will make it to the next room in this wondrous maze!~";
 Constant SC_11 = "UNDO the last command";
-Constant SC_24 = "Wendy says, in an almost gleeful tone, ~Oh! I'm sorry! It seems you guessed...wrong...~ Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, ~But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!~ You awaken moments later, back in your previous condition, in the Testing Chamber.";
-Constant SC_34 = "Would you like to ";
-Constant SC_40 = "You ";
+Constant SC_25 = "Wendy says, in an almost gleeful tone, ~Oh! I'm sorry! It seems you guessed...wrong...~ Suddenly her eyes glow red. Your eyes start to blur, and you begin to feel dizzy. You can overhear her continue as your vision fades, ~But, I'm feeling a bit merciful today! I won't kill you today! But try to return to the Second Riddle Room, and guess right this time!~ You awaken moments later, back in your previous condition, in the Testing Chamber. Deja vu ensues as the voice on the loudspeaker repeats itself, yet you feel just as sick as before:";
+Constant SC_37 = "Would you like to ";
+Constant SC_43 = "You ";
 Constant SC_12 = "You begin to feel woozy, and your vision blurs for a second, but then you feel normal again.";
-Constant SC_5 = "You find yourself in a room that takes on the appearance of a test chamber. All there is are two doors along the walls, and a small crate lying in the center of the room. There is silence. Suddenly, you hear over a loudspeaker, ~Ah, another test subject! Welcome! You don't know who I am, but I know everything there is to know about you.~ Perhaps we should keep it that way. You're objective is to get out of here and find me. How will you do that? Well, heheh, I can't tell you that. But maybe you shouldn't try to figure it out right now...maybe you should just sit down...and relax...and rest...heheheheh...~ The voice cuts out. Suddenly, you hear the audible sounds of the air ventilation system speeding up outside of the room. A strange yellow-colored gas fills the room. After some time, you feel it fill your lungs, and you cough a bit. You are left alone in the room.";
-Constant SC_25 = "You overhear the creepy voice on the loadspeaker say, in his usual calm and overbearing voice, ~Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don't you take a break on this nice bed in front of you? I can't think of any harm in taking a rest in the Room of Despair, after all...heheheh.~ The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.";
-Constant SC_50 = "You rest for 20 minutes. The time of day is now ";
-Constant SC_32 = "You walk into the next room. There is nothing in it. There's a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, ~Hmph, it seems you've reached the dead end. That's a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don't leave a mess for the next subject.~ The voice cuts out. There is a deadening silence in the room.";
-Constant SC_31 = "You walk up the silver staircase. You enter an empty, yellow room. Nothing is in the room except a plain wooden door at the other end, and the silver staircase you just walked up.";
-Constant SC_14 = "Your stomach suddenly feels inflamed. This disease is catching up on you. You get sick and stumble to the floor. You pick yourself back up, but you begin to feel yourself weakening.";
-Constant SC_15 = "Your vision begins to blur, but this time it doesn't go away. You can still see ahead of you, but just barely. Your muscles weaken, and every further movement requires limping.";
-Constant SC_45 = "also ";
-Constant SC_44 = "can ";
-Constant SC_46 = "see ";
+Constant SC_5 = "You find yourself in a room that takes on the appearance of a test chamber. All there is are two doors along the walls, and a small crate lying in the center of the room. On the southern wall, ~1:00 AM~ is painted to fill up nearly the whole wall. There is silence. Suddenly, you hear over a loudspeaker, ~Ah, another test subject! Welcome! You don't know who I am, but I know everything there is to know about you.~ Perhaps we should keep it that way. You're objective is to get out of here and find me. How will you do that? Well, heheh, I can't tell you that. But maybe you shouldn't try to figure it out right now...maybe you should just sit down...and relax...and rest...heheheheh...oh, and just for your reference, it's currently midnight.~ The voice cuts out. Suddenly, you hear the audible sounds of the air ventilation system speeding up outside of the room. A strange yellow-colored gas fills the room. After some time, you feel it fill your lungs, and you cough a bit. You are left alone in the room.";
+Constant SC_34 = "You hear gears turn. There is metal churning, string clinks and clanks to be heard. All debilitations your sickness has caused suddenly go away. The voice returns to the loudspeakers: ~Well done, sir! It seems that we have another test subject that has passed and not, well, dropped dead! Why don't you come meet me in the Winning Room? You'll find that both the Silver Door and the True Door are now opened for you.~";
+Constant SC_26 = "You overhear the creepy voice on the loudspeaker say, in his usual calm and overbearing voice, ~Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don't you take a break on this nice bed in front of you? I can't think of any harm in taking a rest in the Room of Despair, after all...heheheh.~ The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.";
+Constant SC_53 = "You rest for 20 minutes. The time of day is now ";
+Constant SC_33 = "You walk into the next room. There is nothing in it. There's a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, ~Hmph, it seems you've reached the dead end. That's a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don't leave a mess for the next subject.~ The voice cuts out. There is a deadening silence in the room.";
+Constant SC_32 = "You walk up the silver staircase. You enter an empty, yellow room. Nothing is in the room except a plain wooden door at the other end, and the silver staircase you just walked up.";
+Constant SC_15 = "Your stomach suddenly feels inflamed. This disease is catching up on you. You get sick and stumble to the floor. You pick yourself back up, but you begin to feel yourself weakening.";
+Constant SC_16 = "Your vision begins to blur, but this time it doesn't go away. You can still see ahead of you, but just barely. Your muscles weaken, and every further movement requires limping.";
+Constant SC_48 = "also ";
+Constant SC_47 = "can ";
+Constant SC_49 = "see ";
 Constant SC_9 = "see some suggestions for AMUSING things to do";
 Constant SC_3 = "the";
 
