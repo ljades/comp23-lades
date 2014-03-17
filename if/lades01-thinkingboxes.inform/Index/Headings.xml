@@ -3,9 +3,9 @@
 <plist version="1.0"><dict>
     <key>Application Version</key><string>6G60</string>
     <key>0</key><dict>
-        <key>Filename</key><string>/home/lades01/Documents/lades01-thinkingboxes.inform/Source/story.ni</string>
+        <key>Filename</key><string>/home/lades01/Documents/comp23-lades/if/lades01-thinkingboxes.inform/Source/story.ni</string>
         <key>Line</key><integer>1</integer>
-        <key>Title</key><string>"test-story" by "Louis Ades"</string>
+        <key>Title</key><string>"Arbitrary Evaluations" by "Louis Ades"</string>
         <key>Level</key><integer>0</integer>
         <key>Indentation</key><integer>0</integer>
     </dict>

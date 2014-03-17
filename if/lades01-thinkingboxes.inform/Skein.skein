@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-0x20061d0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x24f0180" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>GNOME Inform 7</generator>
-  <activeNode nodeId="node-0x20061d0"/>
-  <item nodeId="node-0x20061d0">
+  <activeNode nodeId="node-0x24f0180"/>
+  <item nodeId="node-0x24f0180">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
 
 
-test-story
+Arbitrary Evaluations
 An Interactive Fiction by Louis Ades
 Release 1 / Serial number 140317 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
@@ -24,20 +24,20 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2006330"/>
-      <child nodeId="node-0x20068b0"/>
-      <child nodeId="node-0x27905e0"/>
-      <child nodeId="node-0x2790e20"/>
-      <child nodeId="node-0x27b6b60"/>
-      <child nodeId="node-0x27dc5e0"/>
-      <child nodeId="node-0x27dc8a0"/>
-      <child nodeId="node-0x27dcb60"/>
-      <child nodeId="node-0x2813180"/>
-      <child nodeId="node-0x2813b20"/>
-      <child nodeId="node-0x2813de0"/>
+      <child nodeId="node-0x24f02e0"/>
+      <child nodeId="node-0x24f0860"/>
+      <child nodeId="node-0x2cb04c0"/>
+      <child nodeId="node-0x2cb0d00"/>
+      <child nodeId="node-0x2cd6a40"/>
+      <child nodeId="node-0x2d0a4c0"/>
+      <child nodeId="node-0x2d0a780"/>
+      <child nodeId="node-0x2d0aa40"/>
+      <child nodeId="node-0x2d24050"/>
+      <child nodeId="node-0x2d249f0"/>
+      <child nodeId="node-0x2d24cb0"/>
     </children>
   </item>
-  <item nodeId="node-0x2006330">
+  <item nodeId="node-0x24f02e0">
     <command xml:space="preserve">Look</command>
     <result xml:space="preserve">Testing Chamber
 
@@ -48,10 +48,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2006490"/>
+      <child nodeId="node-0x24f0440"/>
     </children>
   </item>
-  <item nodeId="node-0x2006490">
+  <item nodeId="node-0x24f0440">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
@@ -62,10 +62,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x20065f0"/>
+      <child nodeId="node-0x24f05a0"/>
     </children>
   </item>
-  <item nodeId="node-0x20065f0">
+  <item nodeId="node-0x24f05a0">
     <command xml:space="preserve">crate</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
@@ -76,10 +76,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2006750"/>
+      <child nodeId="node-0x24f0700"/>
     </children>
   </item>
-  <item nodeId="node-0x2006750">
+  <item nodeId="node-0x24f0700">
     <command xml:space="preserve">Showme</command>
     <result xml:space="preserve">Testing Chamber - room
     yourself - person
@@ -91,7 +91,7 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x20068b0">
+  <item nodeId="node-0x24f0860">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -102,16 +102,16 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2006a10"/>
-      <child nodeId="node-0x2006b70"/>
-      <child nodeId="node-0x2701020"/>
-      <child nodeId="node-0x2701180"/>
-      <child nodeId="node-0x2701700"/>
-      <child nodeId="node-0x27282c0"/>
-      <child nodeId="node-0x2776170"/>
+      <child nodeId="node-0x24f09c0"/>
+      <child nodeId="node-0x24f0b20"/>
+      <child nodeId="node-0x2bf8080"/>
+      <child nodeId="node-0x2bf81e0"/>
+      <child nodeId="node-0x2bf8760"/>
+      <child nodeId="node-0x2c1f340"/>
+      <child nodeId="node-0x2c70170"/>
     </children>
   </item>
-  <item nodeId="node-0x2006a10">
+  <item nodeId="node-0x24f09c0">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Testing Chamber - room
     yourself - person
@@ -124,7 +124,7 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2006b70">
+  <item nodeId="node-0x24f0b20">
     <command xml:space="preserve">take wooden Challenge Key</command>
     <result xml:space="preserve">Taken.
 
@@ -135,10 +135,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2006cd0"/>
+      <child nodeId="node-0x24f0c80"/>
     </children>
   </item>
-  <item nodeId="node-0x2006cd0">
+  <item nodeId="node-0x24f0c80">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Testing Chamber - room
     yourself - person
@@ -152,10 +152,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2006e30"/>
+      <child nodeId="node-0x24f0de0"/>
     </children>
   </item>
-  <item nodeId="node-0x2006e30">
+  <item nodeId="node-0x24f0de0">
     <command xml:space="preserve">open True Door</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
@@ -166,7 +166,7 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2701020">
+  <item nodeId="node-0x2bf8080">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 10 minutes. The time of day is   now 12:11 am
 &gt;</result>
@@ -176,7 +176,7 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2701180">
+  <item nodeId="node-0x2bf81e0">
     <command xml:space="preserve">not resting</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
@@ -187,10 +187,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27012e0"/>
+      <child nodeId="node-0x2bf8340"/>
     </children>
   </item>
-  <item nodeId="node-0x27012e0">
+  <item nodeId="node-0x2bf8340">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 10 minutes. The time of day is now 12:11 am
 &gt;</result>
@@ -200,10 +200,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2701440"/>
+      <child nodeId="node-0x2bf84a0"/>
     </children>
   </item>
-  <item nodeId="node-0x2701440">
+  <item nodeId="node-0x2bf84a0">
     <command xml:space="preserve">take key</command>
     <result xml:space="preserve">Taken.
 
@@ -214,10 +214,10 @@ You can see a Challenge Door, a True Door and a crate (closed) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27015a0"/>
+      <child nodeId="node-0x2bf8600"/>
     </children>
   </item>
-  <item nodeId="node-0x27015a0">
+  <item nodeId="node-0x2bf8600">
     <command xml:space="preserve">unlock Challenge Door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -229,7 +229,7 @@ You unlock the Challenge Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2701700">
+  <item nodeId="node-0x2bf8760">
     <command xml:space="preserve">take key</command>
     <result xml:space="preserve">Taken.
 
@@ -242,13 +242,13 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2701860"/>
-      <child nodeId="node-0x27019c0"/>
-      <child nodeId="node-0x2701b20"/>
-      <child nodeId="node-0x2701c80"/>
+      <child nodeId="node-0x2bf88c0"/>
+      <child nodeId="node-0x2bf8a20"/>
+      <child nodeId="node-0x2bf8b80"/>
+      <child nodeId="node-0x2bf8ce0"/>
     </children>
   </item>
-  <item nodeId="node-0x2701860">
+  <item nodeId="node-0x2bf88c0">
     <command xml:space="preserve">unlock Challenge Door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 Your health decreased by 1.
@@ -262,7 +262,7 @@ You unlock the Challenge Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27019c0">
+  <item nodeId="node-0x2bf8a20">
     <command xml:space="preserve">unlock door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -274,7 +274,7 @@ You unlock the Challenge Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2701b20">
+  <item nodeId="node-0x2bf8b80">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 10 minutes. The time of day is   now 12:12 am
 A stinging pain hits your throat, and you begin to cough violently.
@@ -286,7 +286,7 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2701c80">
+  <item nodeId="node-0x2bf8ce0">
     <command xml:space="preserve">unlock challenge door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -298,10 +298,10 @@ You unlock the Challenge Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2701de0"/>
+      <child nodeId="node-0x2bf8e40"/>
     </children>
   </item>
-  <item nodeId="node-0x2701de0">
+  <item nodeId="node-0x2bf8e40">
     <command xml:space="preserve">say &quot;Hi&quot;</command>
     <result xml:space="preserve">(to yourself)
 There is no reply.
@@ -315,10 +315,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728000"/>
+      <child nodeId="node-0x2c1f080"/>
     </children>
   </item>
-  <item nodeId="node-0x2728000">
+  <item nodeId="node-0x2c1f080">
     <command xml:space="preserve">enter Challenge Door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -332,10 +332,10 @@ You can see a Challenge Door and Kinder Gardener here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728160"/>
+      <child nodeId="node-0x2c1f1e0"/>
     </children>
   </item>
-  <item nodeId="node-0x2728160">
+  <item nodeId="node-0x2c1f1e0">
     <command xml:space="preserve">say &quot;Hi&quot;</command>
     <result xml:space="preserve">(to Kinder Gardener)
 There is no reply.
@@ -347,7 +347,7 @@ There is no reply.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27282c0">
+  <item nodeId="node-0x2c1f340">
     <command xml:space="preserve">unlock challenge door</command>
     <result xml:space="preserve">What do you want to unlock the Challenge Door with?
 
@@ -358,11 +358,11 @@ There is no reply.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728420"/>
-      <child nodeId="node-0x27286e0"/>
+      <child nodeId="node-0x2c1f4a0"/>
+      <child nodeId="node-0x2c1f760"/>
     </children>
   </item>
-  <item nodeId="node-0x2728420">
+  <item nodeId="node-0x2c1f4a0">
     <command xml:space="preserve">challenge key</command>
     <result xml:space="preserve">(first taking the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -376,10 +376,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728580"/>
+      <child nodeId="node-0x2c1f600"/>
     </children>
   </item>
-  <item nodeId="node-0x2728580">
+  <item nodeId="node-0x2c1f600">
     <command xml:space="preserve">enter challenge door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -393,7 +393,7 @@ You can see a Challenge Door and Kinder Gardener here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27286e0">
+  <item nodeId="node-0x2c1f760">
     <command xml:space="preserve">key</command>
     <result xml:space="preserve">(first taking the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -407,11 +407,11 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728840"/>
-      <child nodeId="node-0x27289a0"/>
+      <child nodeId="node-0x2c1f8c0"/>
+      <child nodeId="node-0x2c1fa20"/>
     </children>
   </item>
-  <item nodeId="node-0x2728840">
+  <item nodeId="node-0x2c1f8c0">
     <command xml:space="preserve">enter Challenge Door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -425,7 +425,7 @@ You can see a Challenge Door and Kinder Gardener here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27289a0">
+  <item nodeId="node-0x2c1fa20">
     <command xml:space="preserve">enter challenge door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -444,10 +444,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728b00"/>
+      <child nodeId="node-0x2c1fb80"/>
     </children>
   </item>
-  <item nodeId="node-0x2728b00">
+  <item nodeId="node-0x2c1fb80">
     <command xml:space="preserve">open crate #4</command>
     <result xml:space="preserve">You can&apos;t see any such thing.
 
@@ -458,10 +458,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728c60"/>
+      <child nodeId="node-0x2c1fce0"/>
     </children>
   </item>
-  <item nodeId="node-0x2728c60">
+  <item nodeId="node-0x2c1fce0">
     <command xml:space="preserve">open Box #4</command>
     <result xml:space="preserve">You open Box #4, revealing a First Riddle Key.
 
@@ -472,10 +472,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2728dc0"/>
+      <child nodeId="node-0x2c1fe40"/>
     </children>
   </item>
-  <item nodeId="node-0x2728dc0">
+  <item nodeId="node-0x2c1fe40">
     <command xml:space="preserve">take first riddle key</command>
     <result xml:space="preserve">Taken.
 
@@ -486,10 +486,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e070"/>
+      <child nodeId="node-0x2c46010"/>
     </children>
   </item>
-  <item nodeId="node-0x274e070">
+  <item nodeId="node-0x2c46010">
     <command xml:space="preserve">unlock first riddle door</command>
     <result xml:space="preserve">What do you want to unlock the First Riddle Door with?
 
@@ -500,10 +500,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e1d0"/>
+      <child nodeId="node-0x2c46170"/>
     </children>
   </item>
-  <item nodeId="node-0x274e1d0">
+  <item nodeId="node-0x2c46170">
     <command xml:space="preserve">first riddle key</command>
     <result xml:space="preserve">You unlock the First Riddle Door.
 
@@ -516,10 +516,10 @@ Once again, the gas hasn&apos;t felt that impactful to your health, but your pre
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e330"/>
+      <child nodeId="node-0x2c462d0"/>
     </children>
   </item>
-  <item nodeId="node-0x274e330">
+  <item nodeId="node-0x2c462d0">
     <command xml:space="preserve">enter first riddle door</command>
     <result xml:space="preserve">(first opening the First Riddle Door)
 
@@ -541,10 +541,10 @@ Two women stand side by side in the next room. To the north is a blue door, to t
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e490"/>
+      <child nodeId="node-0x2c46430"/>
     </children>
   </item>
-  <item nodeId="node-0x274e490">
+  <item nodeId="node-0x2c46430">
     <command xml:space="preserve">enter red door</command>
     <result xml:space="preserve">(first opening the Red Door)
 
@@ -564,10 +564,10 @@ You overhear the creepy voice on the loadspeaker say, in his usual calm and over
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e5f0"/>
+      <child nodeId="node-0x2c46590"/>
     </children>
   </item>
-  <item nodeId="node-0x274e5f0">
+  <item nodeId="node-0x2c46590">
     <command xml:space="preserve">enter red door</command>
     <result xml:space="preserve">
 Second Riddle Room
@@ -580,10 +580,10 @@ You can see a Red Door, a Green Door, a Blue Door and a First Riddle Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e750"/>
+      <child nodeId="node-0x2c466f0"/>
     </children>
   </item>
-  <item nodeId="node-0x274e750">
+  <item nodeId="node-0x2c466f0">
     <command xml:space="preserve">enter red door</command>
     <result xml:space="preserve">
 Room of Despair
@@ -596,10 +596,10 @@ You can see a Red Door, a Silver Staircase, a White Door and a bed here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274e8b0"/>
+      <child nodeId="node-0x2c46850"/>
     </children>
   </item>
-  <item nodeId="node-0x274e8b0">
+  <item nodeId="node-0x2c46850">
     <command xml:space="preserve">enter white door</command>
     <result xml:space="preserve">(first opening the White Door)
 
@@ -619,10 +619,10 @@ As you enter the room, labeled by the White Door as the &quot;Nightmare Room,&qu
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274ea10"/>
+      <child nodeId="node-0x2c469b0"/>
     </children>
   </item>
-  <item nodeId="node-0x274ea10">
+  <item nodeId="node-0x2c469b0">
     <command xml:space="preserve">enter white door</command>
     <result xml:space="preserve">
 Room of Despair
@@ -641,10 +641,10 @@ As you desperately TURN BACK and as the walls instruct, you jolt right back to w
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274eb70"/>
+      <child nodeId="node-0x2c46b10"/>
     </children>
   </item>
-  <item nodeId="node-0x274eb70">
+  <item nodeId="node-0x2c46b10">
     <command xml:space="preserve">enter silver staircase</command>
     <result xml:space="preserve">(first opening the Silver Staircase)
 
@@ -660,10 +660,10 @@ You walk up the silver staircase. You enter an empty, yellow room. Nothing is in
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274ecd0"/>
+      <child nodeId="node-0x2c46c70"/>
     </children>
   </item>
-  <item nodeId="node-0x274ecd0">
+  <item nodeId="node-0x2c46c70">
     <command xml:space="preserve">enter wooden door</command>
     <result xml:space="preserve">(first opening the Wooden Door)
 
@@ -679,10 +679,10 @@ You walk into the next room. There is nothing in it. There&apos;s a silver door 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x274ee30"/>
+      <child nodeId="node-0x2c46dd0"/>
     </children>
   </item>
-  <item nodeId="node-0x274ee30">
+  <item nodeId="node-0x2c46dd0">
     <command xml:space="preserve">enter wooden door</command>
     <result xml:space="preserve">
 Yellow Room
@@ -697,10 +697,10 @@ You walk up the silver staircase. You enter an empty, yellow room. Nothing is in
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2776010"/>
+      <child nodeId="node-0x2c70010"/>
     </children>
   </item>
-  <item nodeId="node-0x2776010">
+  <item nodeId="node-0x2c70010">
     <command xml:space="preserve">enter wooden door</command>
     <result xml:space="preserve">
 Dead End
@@ -717,7 +717,7 @@ You walk into the next room. There is nothing in it. There&apos;s a silver door 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2776170">
+  <item nodeId="node-0x2c70170">
     <command xml:space="preserve">unlock door</command>
     <result xml:space="preserve">Which do you mean, the Challenge Door or the True Door?
 
@@ -728,11 +728,11 @@ You walk into the next room. There is nothing in it. There&apos;s a silver door 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27762d0"/>
-      <child nodeId="node-0x282a1a0"/>
+      <child nodeId="node-0x2c702d0"/>
+      <child nodeId="node-0x2c89620"/>
     </children>
   </item>
-  <item nodeId="node-0x27762d0">
+  <item nodeId="node-0x2c702d0">
     <command xml:space="preserve">key</command>
     <result xml:space="preserve">(first taking the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -746,12 +746,12 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2776430"/>
-      <child nodeId="node-0x2776590"/>
-      <child nodeId="node-0x2776850"/>
+      <child nodeId="node-0x2c70430"/>
+      <child nodeId="node-0x2c70590"/>
+      <child nodeId="node-0x2c70850"/>
     </children>
   </item>
-  <item nodeId="node-0x2776430">
+  <item nodeId="node-0x2c70430">
     <command xml:space="preserve">enter Challenge Door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -765,7 +765,7 @@ You can see a Challenge Door and Kinder Gardener here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2776590">
+  <item nodeId="node-0x2c70590">
     <command xml:space="preserve">enter challenge door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -782,10 +782,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27766f0"/>
+      <child nodeId="node-0x2c706f0"/>
     </children>
   </item>
-  <item nodeId="node-0x27766f0">
+  <item nodeId="node-0x2c706f0">
     <command xml:space="preserve">open box #1</command>
     <result xml:space="preserve">You open Box #1.
 
@@ -807,7 +807,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2776850">
+  <item nodeId="node-0x2c70850">
     <command xml:space="preserve">enter door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -824,10 +824,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27769b0"/>
+      <child nodeId="node-0x2c709b0"/>
     </children>
   </item>
-  <item nodeId="node-0x27769b0">
+  <item nodeId="node-0x2c709b0">
     <command xml:space="preserve">open box #4</command>
     <result xml:space="preserve">You open Box #4, revealing a First Riddle Key.
 
@@ -840,10 +840,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2776b10"/>
+      <child nodeId="node-0x2c70b10"/>
     </children>
   </item>
-  <item nodeId="node-0x2776b10">
+  <item nodeId="node-0x2c70b10">
     <command xml:space="preserve">unlock First Riddle Door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 That doesn&apos;t seem to fit the lock.
@@ -855,10 +855,10 @@ That doesn&apos;t seem to fit the lock.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2776c70"/>
+      <child nodeId="node-0x2c70c70"/>
     </children>
   </item>
-  <item nodeId="node-0x2776c70">
+  <item nodeId="node-0x2c70c70">
     <command xml:space="preserve">take first riddle key</command>
     <result xml:space="preserve">Taken.
 
@@ -869,10 +869,10 @@ That doesn&apos;t seem to fit the lock.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2776dd0"/>
+      <child nodeId="node-0x2c70dd0"/>
     </children>
   </item>
-  <item nodeId="node-0x2776dd0">
+  <item nodeId="node-0x2c70dd0">
     <command xml:space="preserve">unlock First Riddle Door</command>
     <result xml:space="preserve">What do you want to unlock the First Riddle Door with?
 
@@ -883,10 +883,10 @@ That doesn&apos;t seem to fit the lock.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790060"/>
+      <child nodeId="node-0x2c890a0"/>
     </children>
   </item>
-  <item nodeId="node-0x2790060">
+  <item nodeId="node-0x2c890a0">
     <command xml:space="preserve">first riddle key</command>
     <result xml:space="preserve">You unlock the First Riddle Door.
 
@@ -897,10 +897,10 @@ That doesn&apos;t seem to fit the lock.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27901c0"/>
+      <child nodeId="node-0x2c89200"/>
     </children>
   </item>
-  <item nodeId="node-0x27901c0">
+  <item nodeId="node-0x2c89200">
     <command xml:space="preserve">enter first riddle door</command>
     <result xml:space="preserve">(first opening the First Riddle Door)
 
@@ -918,10 +918,10 @@ Wendy recites, in an identical tone and voice, &quot;Mindasa is correct, and I w
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790320"/>
+      <child nodeId="node-0x2c89360"/>
     </children>
   </item>
-  <item nodeId="node-0x2790320">
+  <item nodeId="node-0x2c89360">
     <command xml:space="preserve">enter red door</command>
     <result xml:space="preserve">(first opening the Red Door)
 
@@ -935,10 +935,10 @@ You can see a Red Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790480"/>
+      <child nodeId="node-0x2c894c0"/>
     </children>
   </item>
-  <item nodeId="node-0x2790480">
+  <item nodeId="node-0x2c894c0">
     <command xml:space="preserve">exit</command>
     <result xml:space="preserve">But you aren&apos;t in anything at the moment.
 
@@ -949,7 +949,7 @@ You can see a Red Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x282a1a0">
+  <item nodeId="node-0x2c89620">
     <command xml:space="preserve">challenge door</command>
     <result xml:space="preserve">What do you want to unlock the Challenge Door with?
 
@@ -960,10 +960,10 @@ You can see a Red Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a300"/>
+      <child nodeId="node-0x2c89780"/>
     </children>
   </item>
-  <item nodeId="node-0x282a300">
+  <item nodeId="node-0x2c89780">
     <command xml:space="preserve">key</command>
     <result xml:space="preserve">(first taking the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -977,10 +977,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a460"/>
+      <child nodeId="node-0x2c898e0"/>
     </children>
   </item>
-  <item nodeId="node-0x282a460">
+  <item nodeId="node-0x2c898e0">
     <command xml:space="preserve">enter door</command>
     <result xml:space="preserve">Which do you mean, the Challenge Door or the True Door?
 
@@ -991,10 +991,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a5c0"/>
+      <child nodeId="node-0x2c89a40"/>
     </children>
   </item>
-  <item nodeId="node-0x282a5c0">
+  <item nodeId="node-0x2c89a40">
     <command xml:space="preserve">challenge door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -1013,10 +1013,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a720"/>
+      <child nodeId="node-0x2c89ba0"/>
     </children>
   </item>
-  <item nodeId="node-0x282a720">
+  <item nodeId="node-0x2c89ba0">
     <command xml:space="preserve">open box #4</command>
     <result xml:space="preserve">You open Box #4, revealing a First Riddle Key.
 
@@ -1029,10 +1029,10 @@ Once again, the gas hasn&apos;t felt that impactful to your health, but your pre
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a880"/>
+      <child nodeId="node-0x2c89d00"/>
     </children>
   </item>
-  <item nodeId="node-0x282a880">
+  <item nodeId="node-0x2c89d00">
     <command xml:space="preserve">take first riddle key</command>
     <result xml:space="preserve">Taken.
 
@@ -1043,10 +1043,10 @@ Once again, the gas hasn&apos;t felt that impactful to your health, but your pre
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a9e0"/>
+      <child nodeId="node-0x2c89e60"/>
     </children>
   </item>
-  <item nodeId="node-0x282a9e0">
+  <item nodeId="node-0x2c89e60">
     <command xml:space="preserve">unlock first riddle door</command>
     <result xml:space="preserve">What do you want to unlock the First Riddle Door with?
 
@@ -1057,10 +1057,10 @@ Once again, the gas hasn&apos;t felt that impactful to your health, but your pre
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282ab40"/>
+      <child nodeId="node-0x2cb00a0"/>
     </children>
   </item>
-  <item nodeId="node-0x282ab40">
+  <item nodeId="node-0x2cb00a0">
     <command xml:space="preserve">first riddle key</command>
     <result xml:space="preserve">You unlock the First Riddle Door.
 
@@ -1073,10 +1073,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282aca0"/>
+      <child nodeId="node-0x2cb0200"/>
     </children>
   </item>
-  <item nodeId="node-0x282aca0">
+  <item nodeId="node-0x2cb0200">
     <command xml:space="preserve">enter First riddle door</command>
     <result xml:space="preserve">(first opening the First Riddle Door)
 
@@ -1098,10 +1098,10 @@ Two women stand side by side in the next room. To the north is a blue door, to t
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282ae00"/>
+      <child nodeId="node-0x2cb0360"/>
     </children>
   </item>
-  <item nodeId="node-0x282ae00">
+  <item nodeId="node-0x2cb0360">
     <command xml:space="preserve">enter blue door</command>
     <result xml:space="preserve">(first opening the Blue Door)
 
@@ -1122,7 +1122,7 @@ You can see a Challenge Door, a True Door and a crate (empty) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27905e0">
+  <item nodeId="node-0x2cb04c0">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Testing Chamber - room
     Challenge Door - locked door
@@ -1138,10 +1138,10 @@ You can see a Challenge Door, a True Door and a crate (empty) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790740"/>
+      <child nodeId="node-0x2cb0620"/>
     </children>
   </item>
-  <item nodeId="node-0x2790740">
+  <item nodeId="node-0x2cb0620">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -1152,10 +1152,10 @@ You can see a Challenge Door, a True Door and a crate (empty) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27908a0"/>
+      <child nodeId="node-0x2cb0780"/>
     </children>
   </item>
-  <item nodeId="node-0x27908a0">
+  <item nodeId="node-0x2cb0780">
     <command xml:space="preserve">unlock Challenge Door</command>
     <result xml:space="preserve">What do you want to unlock the Challenge Door with?
 
@@ -1166,10 +1166,10 @@ You can see a Challenge Door, a True Door and a crate (empty) here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790a00"/>
+      <child nodeId="node-0x2cb08e0"/>
     </children>
   </item>
-  <item nodeId="node-0x2790a00">
+  <item nodeId="node-0x2cb08e0">
     <command xml:space="preserve">key</command>
     <result xml:space="preserve">(first taking the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -1183,10 +1183,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790b60"/>
+      <child nodeId="node-0x2cb0a40"/>
     </children>
   </item>
-  <item nodeId="node-0x2790b60">
+  <item nodeId="node-0x2cb0a40">
     <command xml:space="preserve">enter challenge door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -1200,10 +1200,10 @@ You can see a Challenge Door and Kinder Gardener here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2790cc0"/>
+      <child nodeId="node-0x2cb0ba0"/>
     </children>
   </item>
-  <item nodeId="node-0x2790cc0">
+  <item nodeId="node-0x2cb0ba0">
     <command xml:space="preserve">say &quot;Hi&quot;</command>
     <result xml:space="preserve">(to Kinder Gardener)
 There is no reply.
@@ -1217,7 +1217,7 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2790e20">
+  <item nodeId="node-0x2cb0d00">
     <command xml:space="preserve">open True Door</command>
     <result xml:space="preserve">It seems to be locked.
 
@@ -1228,10 +1228,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6060"/>
+      <child nodeId="node-0x2cb0e60"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6060">
+  <item nodeId="node-0x2cb0e60">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -1242,10 +1242,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b61c0"/>
+      <child nodeId="node-0x2cd60a0"/>
     </children>
   </item>
-  <item nodeId="node-0x27b61c0">
+  <item nodeId="node-0x2cd60a0">
     <command xml:space="preserve">take wooden Challenge key</command>
     <result xml:space="preserve">Taken.
 
@@ -1256,10 +1256,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6320"/>
+      <child nodeId="node-0x2cd6200"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6320">
+  <item nodeId="node-0x2cd6200">
     <command xml:space="preserve">open True Door</command>
     <result xml:space="preserve">It seems to be locked.
 
@@ -1270,10 +1270,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6480"/>
+      <child nodeId="node-0x2cd6360"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6480">
+  <item nodeId="node-0x2cd6360">
     <command xml:space="preserve">unlock True Door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 You unlock the True Door.
@@ -1285,10 +1285,10 @@ You unlock the True Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b65e0"/>
+      <child nodeId="node-0x2cd64c0"/>
     </children>
   </item>
-  <item nodeId="node-0x27b65e0">
+  <item nodeId="node-0x2cd64c0">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Testing Chamber - room
     True Door - closed door
@@ -1303,10 +1303,10 @@ You unlock the True Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6740"/>
+      <child nodeId="node-0x2cd6620"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6740">
+  <item nodeId="node-0x2cd6620">
     <command xml:space="preserve">open True Door</command>
     <result xml:space="preserve">You open the True Door.
 
@@ -1317,10 +1317,10 @@ You unlock the True Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b68a0"/>
+      <child nodeId="node-0x2cd6780"/>
     </children>
   </item>
-  <item nodeId="node-0x27b68a0">
+  <item nodeId="node-0x2cd6780">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Testing Chamber - room
     True Door - open door
@@ -1335,10 +1335,10 @@ You unlock the True Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6a00"/>
+      <child nodeId="node-0x2cd68e0"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6a00">
+  <item nodeId="node-0x2cd68e0">
     <command xml:space="preserve">enter True Door</command>
     <result xml:space="preserve">
 Winning Room
@@ -1351,7 +1351,7 @@ You can see a True Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27b6b60">
+  <item nodeId="node-0x2cd6a40">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 20 minutes. The time of day is now 12:20 am. 
  
@@ -1364,10 +1364,10 @@ You can see a True Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6cc0"/>
+      <child nodeId="node-0x2cd6ba0"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6cc0">
+  <item nodeId="node-0x2cd6ba0">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 20 minutes. The time of day is now 12:41 am. 
  
@@ -1380,11 +1380,11 @@ You can see a True Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27b6e20"/>
-      <child nodeId="node-0x27dc320"/>
+      <child nodeId="node-0x2cd6d00"/>
+      <child nodeId="node-0x2d0a200"/>
     </children>
   </item>
-  <item nodeId="node-0x27b6e20">
+  <item nodeId="node-0x2cd6d00">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -1395,10 +1395,10 @@ You can see a True Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dc060"/>
+      <child nodeId="node-0x2cd6e60"/>
     </children>
   </item>
-  <item nodeId="node-0x27dc060">
+  <item nodeId="node-0x2cd6e60">
     <command xml:space="preserve">time of day</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
@@ -1409,10 +1409,10 @@ You can see a True Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dc1c0"/>
+      <child nodeId="node-0x2d0a0a0"/>
     </children>
   </item>
-  <item nodeId="node-0x27dc1c0">
+  <item nodeId="node-0x2d0a0a0">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 20 minutes. The time of day is now 10:03 am
 &gt;</result>
@@ -1422,7 +1422,7 @@ You can see a True Door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27dc320">
+  <item nodeId="node-0x2d0a200">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 20 minutes. The time of day is now 1:02 am. 
  
@@ -1437,10 +1437,10 @@ You hear gears turn. There is metal churning, string clinks and clanks to be hea
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dc480"/>
+      <child nodeId="node-0x2d0a360"/>
     </children>
   </item>
-  <item nodeId="node-0x27dc480">
+  <item nodeId="node-0x2d0a360">
     <command xml:space="preserve">enter True Door</command>
     <result xml:space="preserve">(first opening the True Door)
 
@@ -1463,7 +1463,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27dc5e0">
+  <item nodeId="node-0x2d0a4c0">
     <command xml:space="preserve">rst</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
@@ -1474,10 +1474,10 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dc740"/>
+      <child nodeId="node-0x2d0a620"/>
     </children>
   </item>
-  <item nodeId="node-0x27dc740">
+  <item nodeId="node-0x2d0a620">
     <command xml:space="preserve">rest</command>
     <result xml:space="preserve">You rest for 20 minutes. The time of day is now 12:20 am
 &gt;</result>
@@ -1487,7 +1487,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27dc8a0">
+  <item nodeId="node-0x2d0a780">
     <command xml:space="preserve">open Challenge Door</command>
     <result xml:space="preserve">It seems to be locked.
 
@@ -1498,10 +1498,10 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dca00"/>
+      <child nodeId="node-0x2d0a8e0"/>
     </children>
   </item>
-  <item nodeId="node-0x27dca00">
+  <item nodeId="node-0x2d0a8e0">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -1512,7 +1512,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x27dcb60">
+  <item nodeId="node-0x2d0aa40">
     <command xml:space="preserve">open challenge door</command>
     <result xml:space="preserve">It seems to be locked.
 
@@ -1523,10 +1523,10 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dccc0"/>
+      <child nodeId="node-0x2d0aba0"/>
     </children>
   </item>
-  <item nodeId="node-0x27dccc0">
+  <item nodeId="node-0x2d0aba0">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -1539,10 +1539,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x27dce20"/>
+      <child nodeId="node-0x2d0ad00"/>
     </children>
   </item>
-  <item nodeId="node-0x27dce20">
+  <item nodeId="node-0x2d0ad00">
     <command xml:space="preserve">take key</command>
     <result xml:space="preserve">Taken.
 
@@ -1553,10 +1553,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2813020"/>
+      <child nodeId="node-0x2d0ae60"/>
     </children>
   </item>
-  <item nodeId="node-0x2813020">
+  <item nodeId="node-0x2d0ae60">
     <command xml:space="preserve">unlock challenge door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -1570,7 +1570,7 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2813180">
+  <item nodeId="node-0x2d24050">
     <command xml:space="preserve">shoeme</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
@@ -1581,10 +1581,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x28132e0"/>
+      <child nodeId="node-0x2d241b0"/>
     </children>
   </item>
-  <item nodeId="node-0x28132e0">
+  <item nodeId="node-0x2d241b0">
     <command xml:space="preserve">showme</command>
     <result xml:space="preserve">Testing Chamber - room
     Challenge Door - locked door
@@ -1600,10 +1600,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2813440"/>
+      <child nodeId="node-0x2d24310"/>
     </children>
   </item>
-  <item nodeId="node-0x2813440">
+  <item nodeId="node-0x2d24310">
     <command xml:space="preserve">open crate</command>
     <result xml:space="preserve">You open the crate, revealing a wooden Challenge Key.
 
@@ -1614,10 +1614,10 @@ A stinging pain hits your throat, and you begin to cough violently.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x28135a0"/>
+      <child nodeId="node-0x2d24470"/>
     </children>
   </item>
-  <item nodeId="node-0x28135a0">
+  <item nodeId="node-0x2d24470">
     <command xml:space="preserve">take key</command>
     <result xml:space="preserve">Taken.
 
@@ -1630,10 +1630,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2813700"/>
+      <child nodeId="node-0x2d245d0"/>
     </children>
   </item>
-  <item nodeId="node-0x2813700">
+  <item nodeId="node-0x2d245d0">
     <command xml:space="preserve">unlock door</command>
     <result xml:space="preserve">(with the wooden Challenge Key)
 You unlock the Challenge Door.
@@ -1645,10 +1645,10 @@ You unlock the Challenge Door.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2813860"/>
+      <child nodeId="node-0x2d24730"/>
     </children>
   </item>
-  <item nodeId="node-0x2813860">
+  <item nodeId="node-0x2d24730">
     <command xml:space="preserve">enter Challenge Door</command>
     <result xml:space="preserve">(first opening the Challenge Door)
 
@@ -1667,10 +1667,10 @@ A man stands in the center of the room in a white button-down, khaki pants, and 
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x28139c0"/>
+      <child nodeId="node-0x2d24890"/>
     </children>
   </item>
-  <item nodeId="node-0x28139c0">
+  <item nodeId="node-0x2d24890">
     <command xml:space="preserve">open Box #1</command>
     <result xml:space="preserve">You open Box #1.
 
@@ -1693,7 +1693,7 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2813b20">
+  <item nodeId="node-0x2d249f0">
     <command xml:space="preserve">exit</command>
     <result xml:space="preserve">But you aren&apos;t in anything at the moment.
 
@@ -1704,10 +1704,10 @@ Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x2813c80"/>
+      <child nodeId="node-0x2d24b50"/>
     </children>
   </item>
-  <item nodeId="node-0x2813c80">
+  <item nodeId="node-0x2d24b50">
     <command xml:space="preserve">exit</command>
     <result xml:space="preserve">But you aren&apos;t in anything at the moment.
 
@@ -1720,7 +1720,7 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x2813de0">
+  <item nodeId="node-0x2d24cb0">
     <command xml:space="preserve">f</command>
     <result xml:space="preserve">That&apos;s not a verb I recognise.
 
@@ -1731,10 +1731,10 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x282a040"/>
+      <child nodeId="node-0x2d24e10"/>
     </children>
   </item>
-  <item nodeId="node-0x282a040">
+  <item nodeId="node-0x2d24e10">
     <command xml:space="preserve">run</command>
     <result xml:space="preserve">You&apos;ll have to say which compass direction to go in.
 
