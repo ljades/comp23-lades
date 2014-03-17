@@ -2,13 +2,15 @@
 
 [Initializing some basic stuff]
 
-The Testing Chamber is a room. "You find yourself in a room that takes on the appearance of a test chamber. All there is are two doors along the walls, and a small crate lying in the center of the room. There is silence. Suddenly, you hear over a loudspeaker, 'Ah, another test subject! Welcome! You don't know who I am, but I know everything there is to know about you.' Perhaps we should keep it that way. You're objective is to get out of here and find me. How will you do that? Well, heheh, I can't tell you that. But maybe you shouldn't try to figure it out right now...maybe you should just sit down...and relax...and rest...heheheheh...' The voice cuts out. Suddenly, you hear the audible sounds of the air ventilation system speeding up outside of the room. A strange yellow-colored gas fills the room. After some time, you feel it fill your lungs, and you cough a bit. You are left alone in the room."
+The Testing Chamber is a room. "You find yourself in a room that takes on the appearance of a test chamber. All there is are two doors along the walls, and a small crate lying in the center of the room. On the southern wall, '1:00 AM' is painted to fill up nearly the whole wall. There is silence. Suddenly, you hear over a loudspeaker, 'Ah, another test subject! Welcome! You don't know who I am, but I know everything there is to know about you.' Perhaps we should keep it that way. You're objective is to get out of here and find me. How will you do that? Well, heheh, I can't tell you that. But maybe you shouldn't try to figure it out right now...maybe you should just sit down...and relax...and rest...heheheheh...oh, and just for your reference, it's currently midnight.' The voice cuts out. Suddenly, you hear the audible sounds of the air ventilation system speeding up outside of the room. A strange yellow-colored gas fills the room. After some time, you feel it fill your lungs, and you cough a bit. You are left alone in the room."
 
 The time of day is 12:00 AM.
 
 [The key to the game is realizing that you should perhaps listen and rest up. It's impossible to finish the game without taking moments to rest. Call it cheating--I call it following through with the rest of the game of, "Stop being paranoid, listen to any help offered, and think outside the box."]
 
 Health is a number that varies. Health is 20.
+
+The maximum score is 100.
 
 Resting is an action applying to nothing. Understand "rest" as resting.
 Check resting:
@@ -20,6 +22,8 @@ Every turn:
 		Decrease health by 1;
 		If health is 18:
 			say "You begin to feel woozy, and your vision blurs for a second, but then you feel normal again.";
+		if health is 14:
+			say "Once again, the gas hasn't felt that impactful to your health, but your previous symptoms get stronger, and you start to feel hyperthermia.";
 		If health is 12:
 			say "A stinging pain hits your throat, and you begin to cough violently.";
 		If health is 8:
@@ -152,4 +156,19 @@ Every turn:
 	if the player is in the Dead End:
 		say "You walk into the next room. There is nothing in it. There's a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, 'Hmph, it seems you've reached the dead end. That's a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don't leave a mess for the next subject.' The voice cuts out. There is a deadening silence in the room.";
 
-The Silver Door is west of the Dead End and east of the Winning Room.
+The Silver Door is a locked door. The Silver Door is west of the Dead End and east of the Winning Room.
+
+FinalCheck is a number that varies. FinalCheck is 1.
+
+Every turn:
+	if the time of day is 1:00 AM or the time of day is after 1:00 AM:
+		if FinalCheck is 1:
+			Now the Silver Door is unlocked;
+			Now the True Door is unlocked;
+			Now health is 100;
+			say "You hear gears turn. There is metal churning, string clinks and clanks to be heard. All debilitations your sickness has caused suddenly go away. The voice returns to the loudspeakers: 'Well done, sir! It seems that we have another test subject that has passed and not, well, dropped dead! Why don't you come meet me in the Winning Room? You'll find that both the Silver Door and the True Door are now opened for you.'";
+			Now FinalCheck is 0;
+	if player is in the Winning Room:
+		Now score is 100;
+		end the story saying "As you enter this mysterious final room, you see a man of great bulk in a black suit standing in the center of the room. He wears a big smile, and in both hands he holds two peculiar documents. 'Congratulations, young lad! Here's your diploma! Now walk out the exit behind me so you can get out there and tackle the real world!' Enraged that you just realized that this was meant to be a sadistic way of teaching you about thinking outside the box and following specific instructions no matter how peculiar they seem, yet powerless to do anything because you realize that you have no real sway over what just happened, you resign yourself and trudge out the back door. Congratulations, you just passed some arbitrary tests to prove your worth to a bunch of people who didn't care about you in the long run! Are you happy with yourself?";
+	

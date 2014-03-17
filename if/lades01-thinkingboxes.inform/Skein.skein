@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-0x1ff31d0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>GNOME Inform 7</generator>
-  <activeNode nodeId="node-0x1ff31d0"/>
+  <activeNode nodeId="node-0x7fd5ac0e6ce0"/>
   <item nodeId="node-0x1ff31d0">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -10,10 +10,10 @@
 
 test-story
 An Interactive Fiction by Louis Ades
-Release 1 / Serial number 140316 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 140317 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Testing Chamber
-You find yourself in a room that takes on the appearance of a test chamber. All there is are two doors along the walls, and a small crate lying in the center of the room. There is silence. Suddenly, you hear over a loudspeaker, &quot;Ah, another test subject! Welcome! You don&apos;t know who I am, but I know everything there is to know about you.&quot; Perhaps we should keep it that way. You&apos;re objective is to get out of here and find me. How will you do that? Well, heheh, I can&apos;t tell you that. But maybe you shouldn&apos;t try to figure it out right now...maybe you should just sit down...and relax...and rest...heheheheh...&quot; The voice cuts out. Suddenly, you hear the audible sounds of the air ventilation system speeding up outside of the room. A strange yellow-colored gas fills the room. After some time, you feel it fill your lungs, and you cough a bit. You are left alone in the room.
+You find yourself in a room that takes on the appearance of a test chamber. All there is are two doors along the walls, and a small crate lying in the center of the room. On the southern wall, &quot;1:00 AM&quot; is painted to fill up nearly the whole wall. There is silence. Suddenly, you hear over a loudspeaker, &quot;Ah, another test subject! Welcome! You don&apos;t know who I am, but I know everything there is to know about you.&quot; Perhaps we should keep it that way. You&apos;re objective is to get out of here and find me. How will you do that? Well, heheh, I can&apos;t tell you that. But maybe you shouldn&apos;t try to figure it out right now...maybe you should just sit down...and relax...and rest...heheheheh...oh, and just for your reference, it&apos;s currently midnight.&quot; The voice cuts out. Suddenly, you hear the audible sounds of the air ventilation system speeding up outside of the room. A strange yellow-colored gas fills the room. After some time, you feel it fill your lungs, and you cough a bit. You are left alone in the room.
 
 You can see a Challenge Door, a True Door and a crate (closed) here.
 
@@ -886,10 +886,13 @@ You can see a True Door here.
   </item>
   <item nodeId="node-0x27356f0">
     <command xml:space="preserve">rest</command>
-    <result xml:space="preserve">You rest for 20 minutes. The time of day is now 9:20 am
+    <result xml:space="preserve">You rest for 20 minutes. The time of day is now 12:20 am. 
+ 
+ The strange voice exclaims, &quot;Ah, so you&apos;ve decided to take my advice...heheheh. But perhaps you should continue on your way? That illness of yours isn&apos;t waiting on you to kill you...or is it?&quot;
+
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>NO</played>
+    <played>YES</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
@@ -899,15 +902,19 @@ You can see a True Door here.
   </item>
   <item nodeId="node-0x2735850">
     <command xml:space="preserve">rest</command>
-    <result xml:space="preserve">You rest for 20 minutes. The time of day is now 9:41 am
+    <result xml:space="preserve">You rest for 20 minutes. The time of day is now 12:41 am. 
+ 
+ The strange voice exclaims, &quot;Ah, so you&apos;ve decided to take my advice...heheheh. But perhaps you should continue on your way? That illness of yours isn&apos;t waiting on you to kill you...or is it?&quot;
+
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>NO</played>
+    <played>YES</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
       <child nodeId="node-0x27359b0"/>
+      <child nodeId="node-0x7fd5ac0e6a20"/>
     </children>
   </item>
   <item nodeId="node-0x27359b0">
@@ -944,6 +951,47 @@ You can see a True Door here.
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fd5ac0e6a20">
+    <command xml:space="preserve">rest</command>
+    <result xml:space="preserve">You rest for 20 minutes. The time of day is now 1:02 am. 
+ 
+ The strange voice exclaims, &quot;Ah, so you&apos;ve decided to take my advice...heheheh. But perhaps you should continue on your way? That illness of yours isn&apos;t waiting on you to kill you...or is it?&quot;
+
+You hear gears turn. There is metal churning, string clinks and clanks to be heard. All debilitations your sickness has caused suddenly go away. The voice returns to the loudspeakers: &quot;Well done, sir! It seems that we have another test subject that has passed and not, well, dropped dead! Why don&apos;t you come meet me in the Winning Room? You&apos;ll find that both the Silver Door and the True Door are now opened for you.&quot;
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5ac0e6ce0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5ac0e6ce0">
+    <command xml:space="preserve">enter True Door</command>
+    <result xml:space="preserve">(first opening the True Door)
+
+Winning Room
+You can see a Silver Door and a True Door here.
+
+
+
+    *** As you enter this mysterious final room, you see a man of great bulk in a black suit standing in the center of the room. He wears a big smile, and in both hands he holds two peculiar documents. &quot;Congratulations, young lad! Here&apos;s your diploma! Now walk out the exit behind me so you can get out there and tackle the real world!&quot; Enraged that you just realized that this was meant to be a sadistic way of teaching you about thinking outside the box and following specific instructions no matter how peculiar they seem, yet powerless to do anything because you realize that you have no real sway over what just happened, you resign yourself and trudge out the back door. Congratulations, you just passed some arbitrary tests to prove your worth to a bunch of people who didn&apos;t care about you in the long run! Are you happy with yourself? ***
+
+
+In that game you scored 100 out of a possible 100, in 4 turns.
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
