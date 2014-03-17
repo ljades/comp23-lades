@@ -8,7 +8,7 @@ The time of day is 12:00 AM.
 
 [The key to the game is realizing that you should perhaps listen and rest up. It's impossible to finish the game without taking moments to rest. Call it cheating--I call it following through with the rest of the game of, "Stop being paranoid, listen to any help offered, and think outside the box."]
 
-Health is a number that varies. Health is 20.
+Health is a number that varies. Health is 18.
 
 The maximum score is 100.
 
@@ -20,10 +20,10 @@ Check resting:
 Every turn:
 	Unless resting:
 		Decrease health by 1;
-		If health is 18:
+		If health is 16:
 			say "You begin to feel woozy, and your vision blurs for a second, but then you feel normal again.";
 		if health is 14:
-			say "Once again, the gas hasn't felt that impactful to your health, but your previous symptoms get stronger, and you start to feel hyperthermia.";
+			say "Once again, the gas hasn't felt that impactful to your health, but your previous symptoms get stronger, and you start to sweat uncontrollably as hyperthermia takes over.";
 		If health is 12:
 			say "A stinging pain hits your throat, and you begin to cough violently.";
 		If health is 8:
@@ -138,8 +138,8 @@ Check4 is a number that varies. Check4 is 1. Check5 is a number that varies. Che
 
 Every turn:
 	if player is in the Nightmare Room and Check4 is 1:
-		say "As you enter the room, labeled by the White Door as the 'Nightmare Room,' the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...'KCABNRUT' is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words 'KCABNRUT' inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. [line break] [line break] Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.";
 		Increase score by 5;
+		say "As you enter the room, labeled by the White Door as the 'Nightmare Room,' the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...'KCABNRUT' is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words 'KCABNRUT' inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. [line break] [line break] Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.";
 		Now Check4 is 0;
 		Now the bed is in the Second Wrong Room;
 		Now the Silver Staircase is unlocked;
@@ -157,6 +157,8 @@ Every turn:
 		say "You walk into the next room. There is nothing in it. There's a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, 'Hmph, it seems you've reached the dead end. That's a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don't leave a mess for the next subject.' The voice cuts out. There is a deadening silence in the room.";
 
 The Silver Door is a locked door. The Silver Door is west of the Dead End and east of the Winning Room.
+
+[Victory conditions]
 
 FinalCheck is a number that varies. FinalCheck is 1.
 

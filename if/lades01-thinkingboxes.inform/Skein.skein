@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-0x1ff31d0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>GNOME Inform 7</generator>
-  <activeNode nodeId="node-0x7fd5ac0e6ce0"/>
+  <activeNode nodeId="node-0x1ff31d0"/>
   <item nodeId="node-0x1ff31d0">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -408,6 +408,7 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
     <annotation xml:space="preserve"></annotation>
     <children>
       <child nodeId="node-0x26e9840"/>
+      <child nodeId="node-0x7fd5ac0e6e40"/>
     </children>
   </item>
   <item nodeId="node-0x26e9840">
@@ -416,6 +417,298 @@ You begin to feel woozy, and your vision blurs for a second, but then you feel n
 
 First Riddle Room
 You can see a Challenge Door and Kinder Gardener here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7fd5ac0e6e40">
+    <command xml:space="preserve">enter challenge door</command>
+    <result xml:space="preserve">(first opening the Challenge Door)
+
+First Riddle Room
+You can see a First Riddle Door, a Challenge Door, Kinder Gardener, Box #1 (closed), Box #2 (closed), Box #3 (closed), Box #4 (closed) and Box #5 (closed) here.
+
+Once in the First Riddle Room, the strange voice says, &quot;Oh, I&apos;m not sure if I&apos;d like you to take on this challenge--you may hurt yourself, after all. But if you insist, you must know that each room contains a riddle that you&apos;ll need to solve. Solve it, and the door connecting to the next room will unlock. It&apos;s very possible that there is an end to this maze after, possibly, the seventh room. Will it lead you to safety? It looks like you&apos;ll have to find that out yourself. If it were up to me, I wish you&apos;d just sit down...and rest...but regardless, try not to hurt yourself, heheheh.&quot; The loudspeaker cuts out.
+A man stands in the center of the room in a white button-down, khaki pants, and a large name tag with the name written, &quot;Kinder Gardener&quot;. He says as you approach him, &quot;I really wish you wouldn&apos;t try this door, but if you insist, two plus two must equal...&quot;. There are five closed boxes in front of him, each with a button on the top that opens it.
+
+[Your score has just gone up by five points.]
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5ac0e68c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5ac0e68c0">
+    <command xml:space="preserve">open crate #4</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5ac0e6b80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5ac0e6b80">
+    <command xml:space="preserve">open Box #4</command>
+    <result xml:space="preserve">You open Box #4, revealing a First Riddle Key.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a02390a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a02390a0">
+    <command xml:space="preserve">take first riddle key</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239200"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239200">
+    <command xml:space="preserve">unlock first riddle door</command>
+    <result xml:space="preserve">What do you want to unlock the First Riddle Door with?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239360"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239360">
+    <command xml:space="preserve">first riddle key</command>
+    <result xml:space="preserve">You unlock the First Riddle Door.
+
+Once again, the gas hasn&apos;t felt that impactful to your health, but your previous symptoms get stronger, and you start to feel hyperthermia.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a02394c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a02394c0">
+    <command xml:space="preserve">enter first riddle door</command>
+    <result xml:space="preserve">(first opening the First Riddle Door)
+
+Second Riddle Room
+You can see a Red Door, a Green Door, a Blue Door, a First Riddle Door, Mindasa Gasho and Wendy Gasho here.
+
+Two women stand side by side in the next room. To the north is a blue door, to the east is a green door, and to the south is a red door (the door you entered through is to the west). Both are dressed identically, in black button-down blouses, white sports jackets and white pants. The woman on the left has blond hair and wears a name tag that says, &quot;Mindasa&quot;. The woman on the right has brown hair and wears a name tag that says, &quot;Wendy.&quot; Other than these differences, both are nearly identical in every way. Both women say, perfectly in unison, &quot;Welcome to the second room! We&apos;re so ecstatic you made it through the first riddle! It was designed for kindergarteners, so we wouldn&apos;t expect any less from you! And don&apos;t worry, this one won&apos;t be nearly as deadly if you fail. Simply FOLLOW OUR INSTRUCTIONS EXACTLY to find out which door to enter through, and you will make it to the next room in this wondrous maze!&quot;
+
+ Mindasa recites, in such monotony that she could be mistaken for an android, &quot;There is a zero percent chance that you&apos;ll want to follow me if your intention is to pass through to what will be the wrong room. But then again, I have been known to lie one hundred percent of the time.&quot; Mindasa then turns her back towards you and walks towards the blue door to the north. She opens it, walks through, and closes it behind her.
+
+ Wendy recites, in an identical tone and voice, &quot;Mindasa is correct, and I will lead you to the right room room. One of these two things I just said is a lie, but this following statement is absolutely true: there is only one correct room.&quot; Wendy then turns her back towards you and walks towards the green door to the east. She opens it, walks through, and closes it behind her.
+
+[Your score has just gone up by five points.]
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239620"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239620">
+    <command xml:space="preserve">enter red door</command>
+    <result xml:space="preserve">(first opening the Red Door)
+
+Room of Despair
+You can see a Silver Staircase, a White Door, a Red Door and a bed here.
+
+A stinging pain hits your throat, and you begin to cough violently.
+
+You overhear the creepy voice on the loadspeaker say, in his usual calm and overbearing voice, &quot;Congratulations. While your first test may have been straightforward, this one required you to think...outside the box. Now, why don&apos;t you take a break on this nice bed in front of you? I can&apos;t think of any harm in taking a rest in the Room of Despair, after all...heheheh.&quot; The room is lighted to a very strange degree, giving off a creepy tone throughout the room. At the other end of the room is a white door.
+
+[Your score has just gone up by five points.]
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239780"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239780">
+    <command xml:space="preserve">enter red door</command>
+    <result xml:space="preserve">
+Second Riddle Room
+You can see a Red Door, a Green Door, a Blue Door and a First Riddle Door here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a02398e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a02398e0">
+    <command xml:space="preserve">enter red door</command>
+    <result xml:space="preserve">
+Room of Despair
+You can see a Red Door, a Silver Staircase, a White Door and a bed here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239a40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239a40">
+    <command xml:space="preserve">enter white door</command>
+    <result xml:space="preserve">(first opening the White Door)
+
+Nightmare Room
+You can see a Blood Door and a White Door here.
+
+As you enter the room, labeled by the White Door as the &quot;Nightmare Room,&quot; the fluorescent lights in the room begin to dim, and then suddenly black out. The sound of air pressure filling the air vents begins to sound. You notice as you keep breathing, that there is something in the air of this room. You begin to trip, and stumble. Suddenly, images on the walls begin to shine out of the black. They are writing scribbled in what looks to be blood dripping down to the ground. The writings get filled in and become legible in front of your eyes...&quot;KCABNRUT&quot; is what is written, over and over again on these walls. The words begin to cascade, until all you can see are the walls completely painted in blood, and the words &quot;KCABNRUT&quot; inscribed in gigantic letters, crooked and slanted as they line the ceiling, the only slate not left completely filled. 
+ 
+ Suddenly, two lights turn back on, one in front of a blood red door right in front of you, and another lighting up the white door right behind you.
+
+[Your score has just gone up by five points.]
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239ba0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239ba0">
+    <command xml:space="preserve">enter white door</command>
+    <result xml:space="preserve">
+Room of Despair
+You can see a White Door, a Red Door and a Silver Staircase here.
+
+Your stomach suddenly feels inflamed. This disease is catching up on you. You get sick and stumble to the floor. You pick yourself back up, but you begin to feel yourself weakening.
+
+As you desperately TURN BACK and as the walls instruct, you jolt right back to where you last left off, the Room of Despair. But something is different; the bed has disappeared, and you notice that the Silver Staircase is no longer locked.
+
+[Your score has just gone up by five points.]
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239d00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239d00">
+    <command xml:space="preserve">enter silver staircase</command>
+    <result xml:space="preserve">(first opening the Silver Staircase)
+
+Yellow Room
+You can see a Wooden Door and a Silver Staircase here.
+
+You walk up the silver staircase. You enter an empty, yellow room. Nothing is in the room except a plain wooden door at the other end, and the silver staircase you just walked up.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a0239e60"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a0239e60">
+    <command xml:space="preserve">enter wooden door</command>
+    <result xml:space="preserve">(first opening the Wooden Door)
+
+Dead End
+You can see a Silver Door and a Wooden Door here.
+
+You walk into the next room. There is nothing in it. There&apos;s a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, &quot;Hmph, it seems you&apos;ve reached the dead end. That&apos;s a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don&apos;t leave a mess for the next subject.&quot; The voice cuts out. There is a deadening silence in the room.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a025d000"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a025d000">
+    <command xml:space="preserve">enter wooden door</command>
+    <result xml:space="preserve">
+Yellow Room
+You can see a Wooden Door and a Silver Staircase here.
+
+You walk up the silver staircase. You enter an empty, yellow room. Nothing is in the room except a plain wooden door at the other end, and the silver staircase you just walked up.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7fd5a025d160"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7fd5a025d160">
+    <command xml:space="preserve">enter wooden door</command>
+    <result xml:space="preserve">
+Dead End
+You can see a Wooden Door and a Silver Door here.
+
+Your vision begins to blur, but this time it doesn&apos;t go away. You can still see ahead of you, but just barely. Your muscles weaken, and every further movement requires limping.
+
+You walk into the next room. There is nothing in it. There&apos;s a silver door at the other end, but it is locked. White fluorescent light fills the room, almost blinding compared to the much dimmer light in the yellow room. The strange voice comes back on-line. You can hear disgust in his tone as he says, &quot;Hmph, it seems you&apos;ve reached the dead end. That&apos;s a shame--I had hoped you would be able to make it further. And for all the help I tried to *lend* you. Oh well--the next test subject should be here soon. You should be dead from your illness soon enough. Just don&apos;t leave a mess for the next subject.&quot; The voice cuts out. There is a deadening silence in the room.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
@@ -892,7 +1185,7 @@ You can see a True Door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
@@ -908,7 +1201,7 @@ You can see a True Door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
@@ -965,7 +1258,7 @@ You hear gears turn. There is metal churning, string clinks and clanks to be hea
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
@@ -991,7 +1284,7 @@ In that game you scored 100 out of a possible 100, in 4 turns.
 Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
 &gt; </result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
