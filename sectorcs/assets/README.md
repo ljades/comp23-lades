@@ -1,0 +1,1 @@
+Images and sounds for Sektor CS.

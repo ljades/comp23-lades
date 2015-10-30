@@ -1,0 +1,1 @@
+A sector is a screen with enemies and obstacles on it. Sectors are arranged into a grid and are connected with one another. These files represent the contents of each sector.

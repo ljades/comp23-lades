@@ -1,0 +1,28 @@
+# Ryan Schumacher
+# MainGun.py
+#
+# The standard gun controlled by the hero unit
+
+import pygame, os, sys
+
+from pygame.locals import *
+from Unit import Unit
+
+sys.path.append("../")
+import Paths
+
+STARTING_SPEED = 2
+
+class Hero(Unit):
+    def __init__(self, canvas):
+        super(Hero, self).__init__(100, 100, 100, 100, ["Weapons"], 10,
+                         Paths.HERO_1, 
+                         Paths.HERO_1,
+                         Paths.HERO_1, 
+                                   canvas.get_width() / 2, 
+                                   canvas.get_height() / 2, 
+                                   canvas)
+        self.speedSetting = STARTING_SPEED
+
+        self.rect.x = (self.rect.x - self.image_w / 2)
+        self.rect.y = (self.rect.y - self.image_h / 2)

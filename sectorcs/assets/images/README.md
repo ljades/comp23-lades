@@ -1,0 +1,1 @@
+Images (background and sprites) for Sektor CS.

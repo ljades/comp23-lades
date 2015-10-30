@@ -1,0 +1,235 @@
+# Ryan Schumacher
+# Unit.py
+#
+# A unit is the sprite played by the user or the sprites opposing the user
+
+import pygame, os, sys, math, Constants
+from pygame.locals import *
+from Constants import *
+
+sys.path.append("Weapons/")
+from MainGun import MainGun
+
+class Unit(pygame.sprite.Sprite):
+    '''A sprite that moves and fires a weapon'''
+
+    def load_image(self, image_path):
+        ''' Loads the sprite from the designated path'''
+        try:
+            image = pygame.image.load(image_path)
+        except pygame.error, message:
+            print "Error loading image: " + image_path
+            raise SystemExit, message
+        return image.convert_alpha()
+
+    def __init__(self, hpMax, hpCur, staminaMax, staminaCur, weapons, armor,
+                 image, onHit, onDeath, initX, initY, max_speed, accel, canvas):
+        pygame.sprite.Sprite.__init__(self)         
+        self.hpMax = hpMax
+        self.hpCur = hpCur
+        self.staminaMax = staminaMax
+        self.staminaCur = staminaCur
+        self.weapons = []
+
+        # Some units have multiple weapons
+        for i in range(len(weapons)):
+            gun = weapons[i](canvas)
+            self.weapons.append(gun)
+        
+   
+        self.weapNum = 0
+        self.curWeap    = self.weapons[self.weapNum]
+        self.armorClass = armor # an integer that dampens damage
+        self.max_speed = max_speed
+
+        self.x = initX
+        self.y = initY
+
+        self.dx = 0
+        self.dy = 0
+        self.accel = accel
+        #Image was modified so that its default rotation is -90.0 so that it
+        #can be treated on a polar plane for image rotation.
+        self.image =   pygame.transform.rotate(self.load_image(image), -90.0)
+        self.rot_image = self.image
+        self.image_w = self.image.get_width()
+        self.image_h = self.image.get_height()
+        self.onHitImage   = onHit   # Path to image of sprite getting hit
+        self.onDeathImage = onDeath # Path to image of sprite dying
+
+        self.rect = self.image.get_rect()
+        self.rect.x = initX
+        self.rect.y = initY
+
+        #Added for holding the current image rotation
+        self.rotate = 0
+
+        self.screen = canvas
+        self.active = True
+
+    def update(self, hero_copy):
+        '''Updates the sprite's position and active status'''
+        if (self.active == True and math.fabs(self.x - hero_copy.x) < WIDTH and 
+            math.fabs(self.y - hero_copy.y) < HEIGHT):    
+            
+            if(self.hpCur <= 0):
+                self.active = False
+
+            self.x += self.dx
+            self.y += self.dy
+
+            self.rect.x = self.x - (self.image_w / 2)
+            self.rect.y = self.y - (self.image_h / 2)
+
+            #Regular deceleration
+            self.dx -= 0.1*(self.dx)
+            self.dy -= 0.1*(self.dy)
+            
+            self.curWeap.update(1.0/Constants.FRAMES_SEC)
+
+            if self.hpCur > self.hpMax:
+                self.hpCur = self.hpMax
+            if (hasattr(self, "collide_cool")):
+                self.collide_cool -= 1
+
+            #Updating image rotation
+            self.rot_image = pygame.transform.rotate(self.image, self.rotate)
+
+            # TODO: Test for computer units not moving off screen
+            
+    def draw(self, relX, relY, hero_copy):
+        if (self.active == True and math.fabs(self.x - hero_copy.x) < WIDTH and 
+            math.fabs(self.y - hero_copy.y) < HEIGHT):    
+            #It now blits the rotated image
+            self.screen.blit(self.rot_image, 
+                         self.image.get_rect().move(self.x - self.image_w / 2 - relX, 
+                                                    self.y - self.image_h / 2 - relY))
+
+    #The following function allows for acceleration and rotation of a unit
+    def vector_path(self, x_relative, y_relative, is_thrust):
+        if ((x_relative < self.image_w/2) and (x_relative > -self.image_w/2) and
+            (y_relative < self.image_h/2) and (y_relative > -self.image_h/2)):
+            pass
+        else:
+            self.rotate = 0
+            if (is_thrust):
+                magnitude = math.sqrt((x_relative * x_relative)
+                                      + (y_relative * y_relative))
+                self.dx += self.accel * (x_relative / magnitude)
+                self.dy += self.accel * (y_relative / magnitude)
+                
+
+            if (y_relative == 0):
+                if (x_relative > 0):
+                    self.rotate = 0.0
+                else:
+                    self.rotate = 180.0
+            elif (x_relative == 0):
+                if (y_relative < 0):
+                    self.rotate = 90.0
+                else:
+                    self.rotate = -90.0
+            else:
+                self.rotate = (180.0 / math.pi) * math.atan( -1.0 * y_relative
+                                                             / x_relative )
+                if ( x_relative < 0 ):
+                    self.rotate += 180.0
+
+    def checkDeath(self):
+        if hpCur <= 0:
+            # TODO: Load the death image for ~ 0.5 seconds
+            self.active = False
+
+    def fireWeapon(self, x, y, velocity):
+        #TODO: Have the weapon class call its fire routine passing in the
+        # appropriate data
+        if((self.staminaCur - self.curWeap.staminaUsage) >= 0):
+            temp = self.curWeap.fire(x, y, velocity, self.rotate)
+            if (temp != None):
+                self.staminaCur -= self.curWeap.staminaUsage
+            return temp
+
+    # Get/set routines for public members
+
+    def getHpMax(self):
+        return self.hpMax
+
+    def setHpMax(self, newhpMax):
+        self.hpMax = newhpMax;
+
+    def getHpCur(self):
+        return self.hpCur
+
+    def setHpCur(self, newHpCur):
+        self.hpCur = newHpCur
+
+    def getStaminaMax(self):
+        return self.staminaMax
+
+    def setStaminaMax(self, newStamMax):
+        self.staminaMax = newStamMax
+
+    def getStaminaCur(self):
+        return self.staminaCur
+
+    def setStaminacur(self, newStaminaCur):
+        self.StaminaCur = newStaminaCur
+
+    def getX(self):
+        return self.x
+
+    def setX(self, newX):
+        self.x = newX
+
+    def getY(self):
+        return self.y
+
+    def setY(self, newY):
+        self.y = newY
+
+    def getDX(self):
+        return self.dx
+
+    def setDX(self, newDX):
+        self.dx = newDX
+
+    def getDY(self):
+        return self.dy
+
+    def setDY(self, newDY):
+        self.dy = newDY
+
+    def getWeapons(self):
+        return self.weapons
+
+    def setImage(self, newImgPath):
+        self.image = self.load_image(newImgPath)
+        self.image_w = self.image.get_width()
+        self.image_h = self.image.get_height()
+
+    def getRect(self):
+        return self.rect
+
+    def getScreen(self):
+        return self.screen
+
+    def setScreen(self, newScreen):
+        self.screen = newScreen
+
+    def getActive(self):
+        return self.active
+
+    def setActive(self, newActive):
+        self.active = newActive
+        
+    def cycleWeapons(self):
+        self.weapNum = ((self.weapNum + 1) % len(self.weapons))
+        self.curWeap    = self.weapons[self.weapNum]
+        
+        
+        
+        
+        
+        
+        
+        

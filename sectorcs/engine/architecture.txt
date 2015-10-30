@@ -1,0 +1,73 @@
+Ryan Schumacher
+Engine architecture for Sektor CS
+
+Key:
+Bold text denotes a separate class. 
++ denotes a public member variable
+(+) denotes a private member variable
+* denotes a public member function
+** denotes a private member function
+
+World
+	+ grid of sectors
+
+GameData (not sure if needed):
+    + A copy of the hero unit
+    + Member variables to denote progress (e.g. first boss killed, etc.)
+
+Sector
+	+ Name (each sector MUST have a unique name)
+	+ A copy of the hero unit
+	+ List of obstacles on the screen
+	+ List of enemies on the screen
+	+ List of adjacent sectors given by [NORTH, SOUTH, EAST, WEST]
+	+ A GameData structure 
+	+ A pair of coordinates to spawn at upon death
+	(+) A function that checks for collisions and calls the appropriate routines in each sprite if there is a collision (e.g. sets the health of a unit if 
+	(+) A file path to the sector’s contents(MIGHT not be needed)
+	*moveTo (Sector moveTo) → moves the ship to an adjacent sector
+	*Get / set methods
+	** Populate() → Reads a file, parses the file, and populates the sector with enemies and obstacles based on the file’s contents. EACH SECTOR will have a file of the form contentsSectorName.txt. I will give you the format for these files once I hammer it out / test it.
+
+Unit (subclass of sprite)
+    + Load Image (copied from lab)
+    + Constructor
+	+ Draw and update
+	+ Hitpoints (max and current)
+	+ Stamina (max and current)
+    + List of fired projectiles (maybe?)
+	+ List of weapons
+	+ Current weapon (must be included in the weapon list)
+	+ When-Hit animation (optional for normal enemies
+    [The sound for hitting something is determined by the projectile]
+    + Death animation
+    * checkDeath ()
+    * fireWeapon () [calls Weapon.fire() with relevant parameters]
+    * Get/Set methods for all public members
+
+Obstacle (subclass of sprite)
+	+ Draw and update
+	+ Armor
+    + Health
+	+ Destructible? (a bool)----> Just use a high armor class instead?
+	+ Touch damage
+	+ Death animation (optional, e.g. a rock explodes)
+    * checkDeath()
+	* Get/set methods for all public members
+
+
+Projectile (subclass of sprite)
+	(Recall that the projectile image is kept in the sprite class)
+	+Draw and update
+	+Damage
+	+Dissipation image (like when a laser hits an object there should be a little splash)
+
+Weapon:
+	+Damage
+	+Dissipation image
+	+Stamina usage
+	*fire (int x, int y, dx, dy) Creates a projectile at (x, y) with velocity (dx, dy) w/ given damage
+	
+
+How moving between sectors works:
+	The game window displays the “current sector.” If the hero unit moves to the northern, eastern, southern, or western boundary of the sector, its coordinates are noted. All enemies on the current sector are killed and removed from the screen. A fade-out / fade-in sequence is used. Another sector is loaded and populated immediately from a file. The hero unit’s coordinates are calculated from the old coordinates, and the hero unit is moved there. 
